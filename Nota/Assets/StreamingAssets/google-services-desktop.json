@@ -1,0 +1,37 @@
+{
+  "client": [
+    {
+      "services": {
+        "appinvite_service": {
+          "status": 1
+        }, 
+        "analytics_service": {
+          "status": 0
+        }
+      }, 
+      "oauth_client": [
+        {
+          "client_id": "868986338610-gqssjbj20rnk0rh941gn4omt1qc7396p.apps.googleusercontent.com"
+        }
+      ], 
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmwwcBCMSwDinpIz2hWKDx7ZndUml2iWo"
+        }
+      ], 
+      "client_info": {
+        "mobilesdk_app_id": "1:868986338610:ios:6c62f14e5f6e4279d26b2b", 
+        "android_client_info": {
+          "package_name": "com.lexrlabs.nota"
+        }
+      }
+    }
+  ], 
+  "configuration_version": "1", 
+  "project_info": {
+    "storage_bucket": "nota-5bcae.appspot.com", 
+    "project_id": "nota-5bcae", 
+    "firebase_url": "https://nota-5bcae.firebaseio.com", 
+    "project_number": "868986338610"
+  }
+}
