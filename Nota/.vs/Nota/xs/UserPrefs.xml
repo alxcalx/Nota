@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{F78D4972-5AA2-F831-C831-D20F05A9E354}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Placenote/Editor/PostBuildTrigger.cs">
+    <Files>
+      <File FileName="Assets/Placenote/Editor/APIKeyCheck.cs" Line="73" Column="1" />
+      <File FileName="Assets/Placenote/Editor/PostBuildTrigger.cs" Line="21" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Nota" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
+              <Node name="Placenote" expanded="True">
+                <Node name="Editor" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7fc90dbc-26cf-419f-bc61-480e87abac16" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
