@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.iOS.Xcode;
@@ -18,7 +18,7 @@ public class PostBuildTrigger : MonoBehaviour
         var projPath = PBXProject.GetPBXProjectPath (pathToBuiltProject);
         var proj = new PBXProject ();
         proj.ReadFromString (File.ReadAllText (projPath));
-        var targetGuid = proj.TargetGuidByName ("Unity-iPhone");
+        var targetGuid = proj.GetUnityMainTargetGuid();
         // EmbedFrameworks cannot be added in Unity 5.6.5
         #if UNITY_2017_2_OR_NEWER
         const string defaultLocationInProj = "Plugins/iOS";
