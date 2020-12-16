@@ -24,7 +24,7 @@ namespace StickyNotes
         [SerializeField] GameObject mListElement;
         [SerializeField] RectTransform mListContentParent;
         [SerializeField] ToggleGroup mToggleGroup;
-   //     [SerializeField] Text mLabelText;
+        [SerializeField] Text mLabelText;
 
         [SerializeField] Image saveButtonProgressBar;
 
@@ -92,7 +92,7 @@ namespace StickyNotes
             if (!mPlacenoteInit && LibPlacenote.Instance.Initialized())
             {
                 mPlacenoteInit = true;
-         //       mLabelText.text = "Ready to Start!";
+              mLabelText.text = "Ready to Start!";
             }
         }
 
@@ -100,7 +100,7 @@ namespace StickyNotes
         public void OnSearchMapsClick()
         {
 
-        //    mLabelText.text = "Searching for saved maps";
+         mLabelText.text = "Searching for saved maps";
 
             LocationInfo locationInfo = Input.location.lastData;
 
@@ -119,7 +119,7 @@ namespace StickyNotes
 
                 if (mapList.Length == 0)
                 {
-           //         mLabelText.text = "No maps found. Create a map first!";
+                    mLabelText.text = "No maps found. Create a map first!";
                     return;
                 }
 
@@ -135,7 +135,7 @@ namespace StickyNotes
                     AddMapToList(mapId);
                 }
 
-         //       mLabelText.text = "Found these maps";
+               mLabelText.text = "Found these maps";
                 mMapListPanel.SetActive(true);
                 mInitPanel.SetActive(false);
 
@@ -189,7 +189,7 @@ namespace StickyNotes
 
         public void OnExitClick()
         {
-      //      mLabelText.text = "Session was reset. You can start new map or load your map again.";
+         mLabelText.text = "Session was reset. You can start new map or load your map again.";
 
             mInitPanel.SetActive(true);
             mMapLoadPanel.SetActive(false);
@@ -232,7 +232,7 @@ namespace StickyNotes
             }
 
      
-      //      mLabelText.text = "Loading Map ID: " + mSelectedMapId;
+         mLabelText.text = "Loading Map ID: " + mSelectedMapId;
 
             LibPlacenote.Instance.LoadMap(mSelectedMapId, (completed, faulted, percentage) =>
             {
@@ -251,16 +251,16 @@ namespace StickyNotes
 
                     LibPlacenote.Instance.StartSession();
 
-                    //mLabelText.text = "Loaded Map. Trying to localize";
+                    mLabelText.text = "Loaded Map. Trying to localize";
 
                 }
                 else if (faulted)
                 {
-          //          mLabelText.text = "Failed to load ID: " + mSelectedMapId;
+                   mLabelText.text = "Failed to load ID: " + mSelectedMapId;
                 }
                 else
                 {
-          //          mLabelText.text = "Map Download: " + percentage.ToString("F2") + "/1.0";
+                 mLabelText.text = "Map Download: " + percentage.ToString("F2") + "/1.0";
                 }
             });
         }
@@ -273,18 +273,18 @@ namespace StickyNotes
                 return;
             }
 
-      //      mLabelText.text = "Deleting Map ID: " + mSelectedMapId;
+           mLabelText.text = "Deleting Map ID: " + mSelectedMapId;
             LibPlacenote.Instance.DeleteMap(mSelectedMapId, (deleted, errMsg) =>
             {
                 if (deleted)
                 {
                     mMapSelectedPanel.SetActive(false);
-         //           mLabelText.text = "Deleted ID: " + mSelectedMapId;
+                   mLabelText.text = "Deleted ID: " + mSelectedMapId;
                     OnSearchMapsClick();
                 }
                 else
                 {
-          //          mLabelText.text = "Failed to delete ID: " + mSelectedMapId;
+                   mLabelText.text = "Failed to delete ID: " + mSelectedMapId;
                 }
             });
         }
@@ -298,7 +298,7 @@ namespace StickyNotes
                 return;
             }
 
-     //       mLabelText.text = "Walk up to an area and tap the screen to place a note.";
+          mLabelText.text = "Walk up to an area and tap the screen to place a note.";
 
             mInitPanel.SetActive(false);
             mMappingPanel.SetActive(true);
@@ -326,7 +326,7 @@ namespace StickyNotes
             }
 
 
-       //     mLabelText.text = "Updating note data...";
+           mLabelText.text = "Updating note data...";
 
 
             LibPlacenote.MapMetadataSettable metadataUpdated = new LibPlacenote.MapMetadataSettable();
@@ -346,7 +346,7 @@ namespace StickyNotes
             {
                 if (success)
                 {
-         //           mLabelText.text = "Note updated! To end the session, click Exit.";
+                  mLabelText.text = "Note updated! To end the session, click Exit.";
 
                     Debug.Log("Meta data successfully updated!");
                 }
@@ -370,14 +370,14 @@ namespace StickyNotes
 
             if (!mapQualityThresholdCrossed)
             {
-       //         mLabelText.text = "Map quality is not good enough to save. Scan a small area with many features and try again.";
+               mLabelText.text = "Map quality is not good enough to save. Scan a small area with many features and try again.";
                 return;
             }
 
             bool useLocation = Input.location.status == LocationServiceStatus.Running;
             LocationInfo locationInfo = Input.location.lastData;
 
-        //    mLabelText.text = "Saving...";
+            mLabelText.text = "Saving...";
 
             LibPlacenote.Instance.SaveMap((mapId) =>
             {
@@ -393,7 +393,7 @@ namespace StickyNotes
 
                 metadata.name = "Note: " + System.DateTime.Now.ToString();
 
-          //      mLabelText.text = "Saved Map Name: " + metadata.name;
+             mLabelText.text = "Saved Map Name: " + metadata.name;
 
                 JObject userdata = new JObject();
                 metadata.userdata = userdata;
@@ -427,17 +427,17 @@ namespace StickyNotes
             {
                 if (completed)
                 {
-            //        mLabelText.text = "Upload Complete! You can now click My Maps and choose a map to load.";
+                  mLabelText.text = "Upload Complete! You can now click My Maps and choose a map to load.";
                     mInitPanel.SetActive(true);
 
                 }
                 else if (faulted)
                 {
-            //        mLabelText.text = "Upload of Map Named: " + mCurrMapDetails.name + "faulted";
+                   mLabelText.text = "Upload of Map Named: " + mCurrMapDetails.name + "faulted";
                 }
                 else
                 {
-            //        mLabelText.text = "Uploading Map " + "(" + (percentage*100.0f).ToString("F2") + " %)";
+                  mLabelText.text = "Uploading Map " + "(" + (percentage*100.0f).ToString("F2") + " %)";
                 }
             });
         }
@@ -445,7 +445,7 @@ namespace StickyNotes
 
         public void OnLocalized()
         {
-    //        mLabelText.text = "Localized. Add or edit notes and click Update. Or click Exit to end the session.";
+         mLabelText.text = "Localized. Add or edit notes and click Update. Or click Exit to end the session.";
             GetComponent<NotesManager>().LoadNotesJSON(mSelectedMapInfo.metadata.userdata);
 
             mLocalizationThumbnail.gameObject.SetActive(false);
@@ -482,7 +482,7 @@ namespace StickyNotes
             if (fullPointCloudMap.Count >= minMapSize)
             {
 
-          //      mLabelText.text = "Minimum map created. Keep adding notes or save the map anytime.";
+               mLabelText.text = "Minimum map created. Keep adding notes or save the map anytime.";
 
                 // Check the map quality to confirm whether you can save
                 if (LibPlacenote.Instance.GetMappingQuality() == LibPlacenote.MappingQuality.GOOD)
@@ -503,7 +503,7 @@ namespace StickyNotes
 
             if (currStatus == LibPlacenote.MappingStatus.LOST && prevStatus == LibPlacenote.MappingStatus.WAITING)
             {
-         //       mLabelText.text = "Point your phone at the area shown in the thumbnail";
+               mLabelText.text = "Point your phone at the area shown in the thumbnail";
             }
         }
     }
