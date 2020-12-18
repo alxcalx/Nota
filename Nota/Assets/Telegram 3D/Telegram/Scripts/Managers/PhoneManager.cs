@@ -27,6 +27,8 @@ namespace Telegram.Auth
         public event Action<UserModel> OnUserNode;
         public event Action OnCodeSent;
 
+        SwitchPanels switchPanels;
+
         public IEnumerator InitAuthAsync()
         {
             _elapsedTime = 0;
@@ -105,6 +107,8 @@ namespace Telegram.Auth
                 verificationCompleted: (credential) =>
                 {
                     print("verification completed");
+                    switchPanels.verifyCodePanel();
+                    
                 },
                 verificationFailed: (error) =>
                 {

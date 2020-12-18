@@ -14,7 +14,7 @@ namespace Telegram.Core
     public class FirebaseCore
     {
         private static DatabaseReference BaseRef { get; set; }
-        private const string DataUrl = "https://fir-example-chat.firebaseio.com/";
+        private const string DataUrl = "https://nota-5bcae.firebaseio.com/";
         private static float _elapsedTime;
 
         public static void Init()
