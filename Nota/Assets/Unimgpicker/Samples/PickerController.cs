@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 namespace Kakera
 {
@@ -10,7 +11,7 @@ namespace Kakera
         private Unimgpicker imagePicker;
 
         [SerializeField]
-        private MeshRenderer imageRenderer;
+        private RawImage imageRenderer;
 
         private int[] sizes = {1024, 256, 16};
 
@@ -18,7 +19,7 @@ namespace Kakera
         {
             imagePicker.Completed += (string path) =>
             {
-                StartCoroutine(LoadImage(path, imageRenderer));
+                StartCoroutine(LoadImage(path));
             };
         }
 
@@ -27,7 +28,7 @@ namespace Kakera
             imagePicker.Show("Select Image", "unimgpicker");
         }
 
-        private IEnumerator LoadImage(string path, MeshRenderer output)
+        private IEnumerator LoadImage(string path)
         {
             var url = "file://" + path;
             var unityWebRequestTexture = UnityWebRequestTexture.GetTexture(url);
@@ -39,7 +40,7 @@ namespace Kakera
                 Debug.LogError("Failed to load texture url:" + url);
             }
 
-            output.material.mainTexture = texture;
+            imageRenderer.texture = texture;
         }
     }
 }

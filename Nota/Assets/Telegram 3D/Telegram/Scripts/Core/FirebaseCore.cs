@@ -29,6 +29,7 @@ namespace Telegram.Core
             BaseRef.Child("users").Child(uid).SetRawJsonValueAsync(playerJson);
         }
 
+
         public static IEnumerator GetPlayer(Action<bool, UserModel> cb)
         {
             _elapsedTime = 0;

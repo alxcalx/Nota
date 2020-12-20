@@ -7,6 +7,7 @@ public class SwitchPanels : MonoBehaviour
     public GameObject PhoneNumberPanel;
     public GameObject VerifyCodePanel;
     public GameObject CrtAccountPanel;
+    public GameObject InitPanel;
 
 
 
@@ -17,6 +18,7 @@ public class SwitchPanels : MonoBehaviour
         PhoneNumberPanel.SetActive(true);
         VerifyCodePanel.SetActive(false);
         CrtAccountPanel.SetActive(false);
+        InitPanel.SetActive(false);
 
 
     }
@@ -27,7 +29,7 @@ public class SwitchPanels : MonoBehaviour
         VerifyCodePanel.SetActive(true);
         PhoneNumberPanel.SetActive(false);
         CrtAccountPanel.SetActive(false);
-
+        InitPanel.SetActive(false);
 
     }
 
@@ -36,6 +38,17 @@ public class SwitchPanels : MonoBehaviour
         CrtAccountPanel.SetActive(true);
         PhoneNumberPanel.SetActive(false);
         CrtAccountPanel.SetActive(false);
+        InitPanel.SetActive(false);
+
+    }
+
+    public void initPanel()
+    {
+        InitPanel.SetActive(true);
+        CrtAccountPanel.SetActive(false);
+        PhoneNumberPanel.SetActive(false);
+        PhoneNumberPanel.SetActive(false);
+
 
     }
 }

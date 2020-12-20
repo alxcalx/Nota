@@ -6,6 +6,7 @@ using Telegram.Data;
 using Firebase.Auth;
 using Loading;
 using UnityEngine;
+using Michsky.UI.ModernUIPack;
 
 namespace Telegram.Auth
 {
@@ -21,7 +22,7 @@ namespace Telegram.Auth
 
         private PhoneAuthProvider _provider;
         private string _verificationId;
-        private string _phoneNumber;
+        public CustomInputField _phoneNumber;
         private const uint PhoneAuthTimeout = 120000;
 
         public event Action<UserModel> OnUserNode;
@@ -98,12 +99,12 @@ namespace Telegram.Auth
             }
         }
 
-        public void VerifyPhoneNumber(string phoneNumber)
+        public void VerifyPhoneNumber()
         {
-            _phoneNumber = phoneNumber;
+            
 
             _provider = PhoneAuthProvider.GetInstance(Auth);
-            _provider.VerifyPhoneNumber(_phoneNumber, PhoneAuthTimeout, null,
+            _provider.VerifyPhoneNumber(_phoneNumber.inputText.text, PhoneAuthTimeout, null,
                 verificationCompleted: (credential) =>
                 {
                     print("verification completed");
@@ -126,6 +127,8 @@ namespace Telegram.Auth
                 {
                     print("code auto retrieval timed Out");
                 });
+
+            print(_phoneNumber.inputText.text);
         }
 
         public void VerifyCode(string code, Action<bool, string> cb)

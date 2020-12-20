@@ -68,7 +68,7 @@ namespace Telegram.Phone
             {
                 _verificationPanel.Initialize(phoneNumber);
                 _verificationPanel.InitTimer();
-                PhoneManager.Instance.VerifyPhoneNumber(phoneNumber);
+           //     PhoneManager.Instance.VerifyPhoneNumber(phoneNumber);
             }
             else if (indexPage == 2)
             {
