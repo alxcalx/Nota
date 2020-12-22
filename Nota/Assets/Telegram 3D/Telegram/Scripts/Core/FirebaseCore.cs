@@ -8,7 +8,7 @@ using Firebase.Unity.Editor;
 using Loading;
 using Telegram.Auth;
 using Telegram.Data;
-
+using Michsky.UI.ModernUIPack;
 namespace Telegram.Core
 {
     public class FirebaseCore
@@ -16,6 +16,7 @@ namespace Telegram.Core
         private static DatabaseReference BaseRef { get; set; }
         private const string DataUrl = "https://nota-5bcae.firebaseio.com/";
         private static float _elapsedTime;
+       
 
         public static void Init()
         {
@@ -85,6 +86,8 @@ namespace Telegram.Core
             cb(false, userModel);
         }
 
+       
+
         public static IEnumerator UpdateUserNameAsync(string userName)
         {
             LoadingPanel.Instance.LoadingStart(ELoading.Load);
@@ -108,6 +111,57 @@ namespace Telegram.Core
 
             LoadingPanel.Instance.LoadingStop();
         }
+
+
+        public static IEnumerator UpdatePrfofilePicAsync(string photourl)
+        {
+            LoadingPanel.Instance.LoadingStart(ELoading.Load);
+
+            _elapsedTime = 0;
+
+            if (PhoneManager.Instance.User == null)
+            {
+                LoadingPanel.Instance.LoadingStop();
+                yield break;
+            }
+
+            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("photo_url").SetValueAsync(photourl);
+            yield return new WaitWhile(() => IsTask(task.IsCompleted));
+
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                LoadingPanel.Instance.LoadingStop();
+                yield break;
+            }
+
+            LoadingPanel.Instance.LoadingStop();
+        }
+
+        public static IEnumerator UpdateProfileNameAsync(string name)
+        {
+            LoadingPanel.Instance.LoadingStart(ELoading.Load);
+
+            _elapsedTime = 0;
+
+            if (PhoneManager.Instance.User == null)
+            {
+                LoadingPanel.Instance.LoadingStop();
+                yield break;
+            }
+
+            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("full_name").SetValueAsync(name);
+            yield return new WaitWhile(() => IsTask(task.IsCompleted));
+
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                LoadingPanel.Instance.LoadingStop();
+                yield break;
+            }
+
+            LoadingPanel.Instance.LoadingStop();
+        }
+
+
 
         private static bool IsTask(bool value)
         {

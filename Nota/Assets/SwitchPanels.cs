@@ -8,6 +8,7 @@ public class SwitchPanels : MonoBehaviour
     public GameObject VerifyCodePanel;
     public GameObject CrtAccountPanel;
     public GameObject InitPanel;
+    public GameObject LabelPanel;
 
 
 
@@ -45,6 +46,7 @@ public class SwitchPanels : MonoBehaviour
     public void initPanel()
     {
         InitPanel.SetActive(true);
+        LabelPanel.SetActive(true);
         CrtAccountPanel.SetActive(false);
         PhoneNumberPanel.SetActive(false);
         PhoneNumberPanel.SetActive(false);

@@ -23,6 +23,7 @@ namespace Telegram.Auth
         private PhoneAuthProvider _provider;
         private string _verificationId;
         public CustomInputField _phoneNumber;
+        public CustomInputField code;
         private const uint PhoneAuthTimeout = 120000;
 
         public event Action<UserModel> OnUserNode;
@@ -131,11 +132,11 @@ namespace Telegram.Auth
             print(_phoneNumber.inputText.text);
         }
 
-        public void VerifyCode(string code, Action<bool, string> cb)
+        public void VerifyCode(/*string code, Action<bool, string>*/)
         {
-            StartCoroutine(VerifyCodeAsync(code, cb));
+            StartCoroutine(VerifyCodeAsync(code.inputText.text /*, cb*/));
         }
-        private IEnumerator VerifyCodeAsync(string code, Action<bool, string> cb)
+        private IEnumerator VerifyCodeAsync(string code /*, Action<bool, string> cb*/)
         {
             LoadingPanel.Instance.LoadingStart(ELoading.Load);
 
@@ -148,7 +149,7 @@ namespace Telegram.Auth
 
             if (task.IsFaulted || task.IsCanceled)
             {
-                cb(true, "The phone auth credential was created\nwith an empty SMS verification Code.");
+              //  cb(true, "The phone auth credential was created\nwith an empty SMS verification Code.");
                 LoadingPanel.Instance.LoadingStop();
                 yield return null;
             }
@@ -159,23 +160,26 @@ namespace Telegram.Auth
                     if (error)
                     {
                         var newUser = task.Result;
+                        var name = "";
                         var userName = "  ";
                         var phoneNumber = newUser.PhoneNumber;
                         var photoUrl = "  ";
 
+                        PlayerPrefs.SetString(PrefsKeys.FullName, "");
                         PlayerPrefs.SetString(PrefsKeys.Name, "  ");
                         PlayerPrefs.SetString(PrefsKeys.Phone, "  ");
                         PlayerPrefs.SetString(PrefsKeys.PhotoUrl, "  ");
                         PlayerPrefs.Save();
 
-                        var user = new UserModel(userName, phoneNumber, photoUrl);
+                        var user = new UserModel(name, userName, phoneNumber, photoUrl);
                         FirebaseCore.CreateNewUser(user, newUser.UserId);
 
-                        cb(false, phoneNumber);
+                     //   cb(false, phoneNumber);
                         LoadingPanel.Instance.LoadingStop();
                     }
                     else
                     {
+                        PlayerPrefs.SetString(PrefsKeys.FullName, model.Name);
                         PlayerPrefs.SetString(PrefsKeys.Name, model.UserName);
                         PlayerPrefs.SetString(PrefsKeys.Phone, model.PhoneNumber);
                         PlayerPrefs.SetString(PrefsKeys.PhotoUrl, model.PhotoUrl);
@@ -186,6 +190,8 @@ namespace Telegram.Auth
                         LoadingPanel.Instance.LoadingStop();
                     }
                 }));
+
+                switchPanels.crtAccountPanel();
             }
         }
 

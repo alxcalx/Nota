@@ -78,7 +78,7 @@ namespace Telegram.Phone
 
         private void VerificationPanelOnClick(string code)
         {
-            PhoneManager.Instance.VerifyCode(code, (error, text) =>
+          /*  PhoneManager.Instance.VerifyCode(code, (error, text) =>
             {
                 if (error)
                 {
@@ -89,7 +89,7 @@ namespace Telegram.Phone
                 {
                     GoToScreen(2);
                 }
-            });
+            }); */
         }
 
         private void InstanceOnUserNode(UserModel data)
