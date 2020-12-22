@@ -1,22 +1,22 @@
 ﻿<Properties StartupConfiguration="{F78D4972-5AA2-F831-C831-D20F05A9E354}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SwitchPanels.cs">
     <Files>
       <File FileName="Assets/Placenote/Editor/APIKeyCheck.cs" Line="73" Column="1" />
       <File FileName="Assets/Placenote/Editor/PostBuildTrigger.cs" />
       <File FileName="Assets/MainController_.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/FirebaseCore.cs" Line="32" Column="1" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs" Line="157" Column="63" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/FirebaseCore.cs" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs" Line="157" Column="14" />
       <File FileName="Assets/Modern UI Pack/Scripts/Input Field/CustomInputField.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/PhoneController.cs" />
-      <File FileName="Assets/SwitchPanels.cs" />
+      <File FileName="Assets/SwitchPanels.cs" Line="1" Column="1" />
       <File FileName="Assets/Unimgpicker/Scripts/Unimgpicker.cs" />
-      <File FileName="Assets/Unimgpicker/Samples/PickerController.cs" Line="41" Column="14" />
+      <File FileName="Assets/Unimgpicker/Samples/PickerController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nota" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="Modern UI Pack" expanded="True">
                 <Node name="Scripts" expanded="True">
                   <Node name="Input Field" expanded="True" />
@@ -31,9 +31,7 @@
                   <Node name="Scripts" expanded="True">
                     <Node name="Controllers" expanded="True" />
                     <Node name="Core" expanded="True" />
-                    <Node name="Managers" expanded="True">
-                      <Node name="PhoneManager.cs" selected="True" />
-                    </Node>
+                    <Node name="Managers" expanded="True" />
                   </Node>
                 </Node>
               </Node>
@@ -49,7 +47,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="43c0236e-77da-471e-8c71-023ecd4c0c68" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ccc2b2c0-b611-42eb-8647-620b03fa3f7c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
