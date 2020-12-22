@@ -109,7 +109,7 @@ namespace Telegram.Auth
                 verificationCompleted: (credential) =>
                 {
                     print("verification completed");
-                    switchPanels.verifyCodePanel();
+                   
                     
                 },
                 verificationFailed: (error) =>
@@ -119,10 +119,12 @@ namespace Telegram.Auth
                 codeSent: (id, token) =>
                 {
                     print("code sent");
+              
 
                     _verificationId = id;
 
                     OnCodeSent?.Invoke();
+                    switchPanels.verifyCodePanel();
                 },
                 codeAutoRetrievalTimeOut: (id) =>
                 {

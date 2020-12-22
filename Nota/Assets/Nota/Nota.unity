@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44673008, g: 0.4965883, b: 0.575022, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -932,7 +932,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnLoadMapClick
         m_Mode: 1
@@ -2752,6 +2752,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 395513427}
+  - component: {fileID: 395513429}
+  - component: {fileID: 395513428}
   m_Layer: 5
   m_Name: MappingPanel
   m_TagString: Untagged
@@ -2781,6 +2783,46 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &395513428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395513426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4fcf16310574cca8a91b383b1943ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mNotesInfoList: []
+  mNotesObjList: []
+  mNotePrefab: {fileID: 1654472876317410, guid: 664cee0938e0f40b9a7e8d00ba56f422, type: 3}
+  mRaycastManager: {fileID: 1858727147}
+--- !u!114 &395513429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395513426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a464136effe854bbcae8c29bb8c96f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mMapSelectedPanel: {fileID: 1556448995}
+  mInitPanel: {fileID: 811840606}
+  mMappingPanel: {fileID: 395513426}
+  mMapListPanel: {fileID: 893799978}
+  mMapLoadPanel: {fileID: 1067704331}
+  mMapLoadButtonPanel: {fileID: 2112990879}
+  mLocalizationThumbnail: {fileID: 1934748735}
+  mListElement: {fileID: 1170995837258984, guid: a0dcd76c7d68f42fa921ce8c6d2a89ee, type: 3}
+  mListContentParent: {fileID: 2042523428}
+  mToggleGroup: {fileID: 2042523429}
+  mLabelText: {fileID: 4707686080829734362}
+  saveButtonProgressBar: {fileID: 293735354}
 --- !u!1 &415809357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,7 +3889,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnCancelClick
         m_Mode: 1
@@ -5305,7 +5347,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnSearchMapsClick
         m_Mode: 1
@@ -5765,7 +5807,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnSaveMapClick
         m_Mode: 1
@@ -6654,8 +6696,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1304640291}
-  - component: {fileID: 1304640293}
-  - component: {fileID: 1304640292}
   - component: {fileID: 1304640294}
   - component: {fileID: 1304640295}
   - component: {fileID: 1304640297}
@@ -6680,46 +6720,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1304640292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304640290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4fcf16310574cca8a91b383b1943ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mNotesInfoList: []
-  mNotesObjList: []
-  mNotePrefab: {fileID: 1654472876317410, guid: 664cee0938e0f40b9a7e8d00ba56f422, type: 3}
-  mRaycastManager: {fileID: 1858727147}
---- !u!114 &1304640293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304640290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a464136effe854bbcae8c29bb8c96f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mMapSelectedPanel: {fileID: 1556448995}
-  mInitPanel: {fileID: 811840606}
-  mMappingPanel: {fileID: 395513426}
-  mMapListPanel: {fileID: 893799978}
-  mMapLoadPanel: {fileID: 1067704331}
-  mMapLoadButtonPanel: {fileID: 2112990879}
-  mLocalizationThumbnail: {fileID: 1934748735}
-  mListElement: {fileID: 1170995837258984, guid: a0dcd76c7d68f42fa921ce8c6d2a89ee, type: 3}
-  mListContentParent: {fileID: 2042523428}
-  mToggleGroup: {fileID: 2042523429}
-  mLabelText: {fileID: 4707686080829734362}
-  saveButtonProgressBar: {fileID: 293735354}
 --- !u!114 &1304640294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6847,7 +6847,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnNewMapClick
         m_Mode: 1
@@ -9335,7 +9335,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnExitClick
         m_Mode: 1
@@ -9544,7 +9544,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnUpdateNotesClick
         m_Mode: 1
@@ -9912,7 +9912,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnDeleteMapClick
         m_Mode: 1
@@ -11238,7 +11238,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1304640293}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: OnSaveMapClick
         m_Mode: 1
