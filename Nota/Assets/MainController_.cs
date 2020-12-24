@@ -25,15 +25,17 @@ public class MainController_ : MonoBehaviour
         yield return StartCoroutine(PhoneManager.Instance.InitAuthAsync());
 
         Init();
+
+
     }
 
     private void Init()
     {
-        FirebaseCore.Init();
 
-        
-       
+        FirebaseCore.Init();
     }
+
+    
 
 
 }

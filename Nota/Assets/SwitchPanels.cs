@@ -37,6 +37,7 @@ public class SwitchPanels : MonoBehaviour
     public void crtAccountPanel()
     {
         CrtAccountPanel.SetActive(true);
+        VerifyCodePanel.SetActive(false);
         PhoneNumberPanel.SetActive(false);
         CrtAccountPanel.SetActive(false);
         InitPanel.SetActive(false);

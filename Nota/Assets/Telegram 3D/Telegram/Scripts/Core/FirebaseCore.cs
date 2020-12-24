@@ -14,20 +14,23 @@ namespace Telegram.Core
     public class FirebaseCore
     {
         private static DatabaseReference BaseRef { get; set; }
-        private const string DataUrl = "https://nota-5bcae.firebaseio.com/";
+
+    
         private static float _elapsedTime;
        
-
         public static void Init()
         {
-            FirebaseApp.DefaultInstance.SetEditorDatabaseUrl(DataUrl);
-            BaseRef = FirebaseDatabase.DefaultInstance.RootReference;
-        }
 
+            BaseRef = FirebaseDatabase.DefaultInstance.RootReference;
+
+        }
+      
         public static void CreateNewUser(UserModel userName, string uid)
         {
+            
             var playerJson = JsonUtility.ToJson(userName);
             BaseRef.Child("users").Child(uid).SetRawJsonValueAsync(playerJson);
+            Debug.Log("User json written to database");
         }
 
 

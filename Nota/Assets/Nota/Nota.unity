@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44673008, g: 0.4965883, b: 0.575022, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,7 +153,7 @@ RectTransform:
   m_GameObject: {fileID: 11886124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 61265691}
   - {fileID: 415809358}
@@ -1625,9 +1625,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1035804765858530082, guid: 4ff1c5a4b485e47aca5aacd4a978133d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3286079363286424432, guid: 4ff1c5a4b485e47aca5aacd4a978133d, type: 3}
       propertyPath: apiKey
       value: 0j3003jmmmwyli0t40njaieus83c4uibly9k2ftgct61z0hm72qr7mho297kqz7ctr64agp3364mxeoctnbd62v2gsp1gnq8oij8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3286079363286424432, guid: 4ff1c5a4b485e47aca5aacd4a978133d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4536323238531420989, guid: 4ff1c5a4b485e47aca5aacd4a978133d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1676,6 +1684,10 @@ PrefabInstance:
     - target: {fileID: 4620038059582172613, guid: 4ff1c5a4b485e47aca5aacd4a978133d, type: 3}
       propertyPath: m_Name
       value: PNSessionOrigin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620038059582172613, guid: 4ff1c5a4b485e47aca5aacd4a978133d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ff1c5a4b485e47aca5aacd4a978133d, type: 3}
@@ -3264,6 +3276,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1304640295}
+        m_TargetAssemblyTypeName: SwitchPanels, Assembly-CSharp
+        m_MethodName: verifyCodePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &566401910
 GameObject:
   m_ObjectHideFlags: 0
@@ -5050,11 +5074,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3509155522227582226, guid: a76e05096e1a89847a3ed9718410328d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509536368049273824, guid: a76e05096e1a89847a3ed9718410328d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3510096087230734732, guid: a76e05096e1a89847a3ed9718410328d, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3510529953081291572, guid: a76e05096e1a89847a3ed9718410328d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7179,6 +7207,10 @@ PrefabInstance:
     - target: {fileID: 1271650370769016, guid: d1e35827f2c514549b1e8c48885a0cc2, type: 3}
       propertyPath: m_Name
       value: PNPointCloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271650370769016, guid: d1e35827f2c514549b1e8c48885a0cc2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4969268942342744, guid: d1e35827f2c514549b1e8c48885a0cc2, type: 3}
       propertyPath: m_LocalPosition.x

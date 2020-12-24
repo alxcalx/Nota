@@ -64,7 +64,7 @@ namespace Telegram.Controller
 
         private void Init()
         {
-            FirebaseCore.Init();
+          //  FirebaseCore.Init();
 
 //            if (PhoneManager.Instance.User != null)
 //            {

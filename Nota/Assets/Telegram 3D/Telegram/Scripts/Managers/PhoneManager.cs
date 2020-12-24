@@ -100,12 +100,14 @@ namespace Telegram.Auth
             }
         }
 
+       
+
         public void VerifyPhoneNumber()
         {
             
 
             _provider = PhoneAuthProvider.GetInstance(Auth);
-            _provider.VerifyPhoneNumber(_phoneNumber.inputText.text, PhoneAuthTimeout, null,
+            _provider.VerifyPhoneNumber("+1" + _phoneNumber.inputText.text, PhoneAuthTimeout, null,
                 verificationCompleted: (credential) =>
                 {
                     print("verification completed");
@@ -124,7 +126,7 @@ namespace Telegram.Auth
                     _verificationId = id;
 
                     OnCodeSent?.Invoke();
-                    switchPanels.verifyCodePanel();
+                 
                 },
                 codeAutoRetrievalTimeOut: (id) =>
                 {
@@ -132,10 +134,13 @@ namespace Telegram.Auth
                 });
 
             print(_phoneNumber.inputText.text);
+
+               
         }
 
         public void VerifyCode(/*string code, Action<bool, string>*/)
         {
+
             StartCoroutine(VerifyCodeAsync(code.inputText.text /*, cb*/));
         }
         private IEnumerator VerifyCodeAsync(string code /*, Action<bool, string> cb*/)
@@ -162,7 +167,7 @@ namespace Telegram.Auth
                     if (error)
                     {
                         var newUser = task.Result;
-                        var name = "";
+                     //   var name = "";
                         var userName = "  ";
                         var phoneNumber = newUser.PhoneNumber;
                         var photoUrl = "  ";
@@ -173,7 +178,7 @@ namespace Telegram.Auth
                         PlayerPrefs.SetString(PrefsKeys.PhotoUrl, "  ");
                         PlayerPrefs.Save();
 
-                        var user = new UserModel(name, userName, phoneNumber, photoUrl);
+                        var user = new UserModel(/*name,*/ userName, phoneNumber, photoUrl);
                         FirebaseCore.CreateNewUser(user, newUser.UserId);
 
                      //   cb(false, phoneNumber);
@@ -181,7 +186,7 @@ namespace Telegram.Auth
                     }
                     else
                     {
-                        PlayerPrefs.SetString(PrefsKeys.FullName, model.Name);
+                      //  PlayerPrefs.SetString(PrefsKeys.FullName, model.Name);
                         PlayerPrefs.SetString(PrefsKeys.Name, model.UserName);
                         PlayerPrefs.SetString(PrefsKeys.Phone, model.PhoneNumber);
                         PlayerPrefs.SetString(PrefsKeys.PhotoUrl, model.PhotoUrl);
@@ -193,7 +198,8 @@ namespace Telegram.Auth
                     }
                 }));
 
-                switchPanels.crtAccountPanel();
+               
+                
             }
         }
 
