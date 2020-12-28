@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using Michsky.UI.ModernUIPack;
 
 namespace Telegram.Phone
 {
@@ -14,7 +15,7 @@ namespace Telegram.Phone
         [SerializeField] private Text _txtHeader;
         [SerializeField] private Text _txtDescription;
         [SerializeField] private Button _btnCountry;
-        [SerializeField] private InputField _inputFieldPhoneNumber;
+        [SerializeField] private CustomInputField _inputFieldPhoneNumber;
         [SerializeField] private Text _txtDiallingCode;
         [SerializeField] private Text _txtCountryName;
 
@@ -25,7 +26,7 @@ namespace Telegram.Phone
         {
             _btnCountry.onClick.AddListener(() => { OnClickCountry?.Invoke(); });
 
-            _inputFieldPhoneNumber.onValueChanged.AddListener((text) =>
+            _inputFieldPhoneNumber.inputText.onValueChanged.AddListener((text) =>
             {
                 _btnNext.interactable = IsPhoneNumber(text);
             });
@@ -52,7 +53,7 @@ namespace Telegram.Phone
 
         public string GetPhoneNumber()
         {
-            return _txtDiallingCode.text + _inputFieldPhoneNumber.text;
+            return _txtDiallingCode.text + _inputFieldPhoneNumber.inputText.text;
         }
 
         private void SetTheme()

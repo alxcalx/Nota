@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Michsky.UI.ModernUIPack;
 
 namespace Telegram.Phone
 {
@@ -14,7 +15,7 @@ namespace Telegram.Phone
         [SerializeField] private Button _btnNext;
         [SerializeField] private Text _txtHeader;
         [SerializeField] private Text _txtDescription;
-        [SerializeField] private InputField _inputFieldCode;
+        [SerializeField] private CustomInputField _inputFieldCode;
         [SerializeField] private Button _btnResend;
         [SerializeField] private Text _txtTimer;
         [SerializeField] private Text _txtTimerDescription;
@@ -29,7 +30,7 @@ namespace Telegram.Phone
         private void Start()
         {
             _btnPrev.onClick.AddListener(() => { OnClickPrev?.Invoke(0); });
-            _btnNext.onClick.AddListener(() => { OnClickNext?.Invoke(_inputFieldCode.text); });
+            _btnNext.onClick.AddListener(() => { OnClickNext?.Invoke(_inputFieldCode.inputText.text); });
             _btnResend.onClick.AddListener(() => { OnClickResend?.Invoke(); });
         }
 
