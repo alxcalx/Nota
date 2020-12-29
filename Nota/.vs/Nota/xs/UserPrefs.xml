@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs">
     <Files>
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs" Line="143" Column="1" />
-      <File FileName="Assets/MainController_.cs" Line="35" Column="29" />
+      <File FileName="Assets/MainController_.cs" />
       <File FileName="Assets/SwitchPanels.cs" />
       <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NotesManager.cs" />
       <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NoteController.cs" />
@@ -18,7 +18,9 @@
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/MessageModel.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/ChatCore.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/ChatController.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/MainController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/MainController.cs" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/PhoneController.cs" Line="60" Column="42" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/UI/Extentions/Scripts/ScrollSnap/ScrollSnapBase.cs" Line="26" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -46,6 +48,13 @@
                     <Node name="Managers" expanded="True">
                       <Node name="PhoneManager.cs" selected="True" />
                     </Node>
+                    <Node name="UI" expanded="True">
+                      <Node name="Extentions" expanded="True">
+                        <Node name="Scripts" expanded="True">
+                          <Node name="ScrollSnap" expanded="True" />
+                        </Node>
+                      </Node>
+                    </Node>
                   </Node>
                 </Node>
               </Node>
@@ -57,7 +66,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bcd21753-aa61-4f28-ada6-d03b0720e249" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e402674e-538e-4380-9b17-f94e9c174495" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

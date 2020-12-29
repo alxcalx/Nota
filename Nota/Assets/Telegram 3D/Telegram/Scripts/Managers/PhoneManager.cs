@@ -180,7 +180,7 @@ namespace Telegram.Auth
                         var user = new UserModel(/*name,*/ userName, phoneNumber, photoUrl);
                         FirebaseCore.CreateNewUser(user, newUser.UserId);
 
-                     //   cb(false, phoneNumber);
+                       cb(false, phoneNumber);
                         LoadingPanel.Instance.LoadingStop();
                     }
                     else

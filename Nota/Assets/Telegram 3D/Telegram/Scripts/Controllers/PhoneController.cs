@@ -82,11 +82,14 @@ namespace Telegram.Phone
             {
                 if (error)
                 {
+                    Debug.Log("VerificationPanelOnClick Error");
+
                     _errorPanel.gameObject.SetActive(true);
                     _errorPanel.Initialize(text);
                 }
                 else
                 {
+                    Debug.Log("VerificationPanelOnClick Screen 2");
                     GoToScreen(2);
                 }
             }); 
@@ -94,6 +97,7 @@ namespace Telegram.Phone
 
         private void InstanceOnUserNode(UserModel data)
         {
+            Debug.Log("Calling Instance User node");
             _horizontalScrollSnap.GoToScreen(2);
             _profilePanel.Initialize(data.PhoneNumber, data.UserName, data.PhotoUrl);
         }
