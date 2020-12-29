@@ -25,17 +25,17 @@ namespace Telegram.Phone
 
         public void Init()
         {
-            _phoneNumberPanel.Init();
+          //  _phoneNumberPanel.Init();
             _phoneNumberPanel.OnClickCountry += PhoneNumberPanelOnClickCountry;
             _phoneNumberPanel.OnClickNext += GoToScreen;
 
-            _verificationPanel.Init();
+       //     _verificationPanel.Init();
             _verificationPanel.OnClickNext += VerificationPanelOnClick;
             _verificationPanel.OnClickPrev += GoToScreen;
             _verificationPanel.OnClickResend += VerificationPanelOnClickResend;
 
-            _profilePanel.Init();
-            _profilePanel.OnClickDone += ProfilePanelOnClickDone;
+       //     _profilePanel.Init();
+      //    _profilePanel.OnClickDone += ProfilePanelOnClickDone;
 
             _countryPanel.Init();
             _countryPanel.OnClick += CountryPanelOnClick;
@@ -66,19 +66,19 @@ namespace Telegram.Phone
             }
             else if (indexPage == 1)
             {
-                _verificationPanel.Initialize(phoneNumber);
-                _verificationPanel.InitTimer();
-           //     PhoneManager.Instance.VerifyPhoneNumber(phoneNumber);
+             //   _verificationPanel.Initialize(phoneNumber);
+              _verificationPanel.InitTimer();
+               PhoneManager.Instance.VerifyPhoneNumber(phoneNumber);
             }
             else if (indexPage == 2)
             {
-                _profilePanel.Initialize(phoneNumber);
+              //  _profilePanel.Initialize(phoneNumber);
             }
         }
 
         private void VerificationPanelOnClick(string code)
         {
-          /*  PhoneManager.Instance.VerifyCode(code, (error, text) =>
+            PhoneManager.Instance.VerifyCode(code, (error, text) =>
             {
                 if (error)
                 {
@@ -89,7 +89,7 @@ namespace Telegram.Phone
                 {
                     GoToScreen(2);
                 }
-            }); */
+            }); 
         }
 
         private void InstanceOnUserNode(UserModel data)

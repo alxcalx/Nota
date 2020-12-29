@@ -47,7 +47,7 @@ namespace Telegram.Phone
 
         public void Init()
         {
-            SetTheme();
+          //  SetTheme();
         }
 
         public void Init(List<CountryModel> data)
@@ -113,12 +113,6 @@ namespace Telegram.Phone
             }
         }
 
-        private void SetTheme()
-        {
-            _background.color = ThemeManager.Instance.MainBackground;
-            _navBackground.color = ThemeManager.Instance.NavBackground;
-            _textNavHeader.color = ThemeManager.Instance.NavMainText;
-            _iconBtnPrev.color = ThemeManager.Instance.NavButtonBackground;
-        }
+     
     }
 }

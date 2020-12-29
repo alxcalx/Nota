@@ -9,11 +9,11 @@ namespace Telegram.Phone
     public class PhoneNumberPanel : MonoBehaviour
     {
         [Header("Components")]
-        [SerializeField] private Image _navBackground;
+     //   [SerializeField] private Image _navBackground;
         [SerializeField] private Button _btnNext;
         [SerializeField] private Image _iconBtnNext;
-        [SerializeField] private Text _txtHeader;
-        [SerializeField] private Text _txtDescription;
+    //    [SerializeField] private Text _txtHeader;
+    //    [SerializeField] private Text _txtDescription;
         [SerializeField] private Button _btnCountry;
         [SerializeField] private CustomInputField _inputFieldPhoneNumber;
         [SerializeField] private Text _txtDiallingCode;
@@ -34,10 +34,6 @@ namespace Telegram.Phone
             _btnNext.onClick.AddListener(() => { OnClickNext?.Invoke(1); });
         }
 
-        public void Init()
-        {
-            SetTheme();
-        }
 
         public void Initialize(string diallingCode, string countryName)
         {
@@ -56,15 +52,6 @@ namespace Telegram.Phone
             return _txtDiallingCode.text + _inputFieldPhoneNumber.inputText.text;
         }
 
-        private void SetTheme()
-        {
-            _navBackground.color = ThemeManager.Instance.NavBackground;
-            _iconBtnNext.color = ThemeManager.Instance.NavButtonBackground;
-            _txtHeader.color = ThemeManager.Instance.MainText;
-            _txtDescription.color = ThemeManager.Instance.SubText;
-            _btnCountry.image.color = ThemeManager.Instance.ButtonBackground;
-            _txtCountryName.color = ThemeManager.Instance.ButtonText;
-            _txtDiallingCode.color = ThemeManager.Instance.SubText;
-        }
+     
     }
 }

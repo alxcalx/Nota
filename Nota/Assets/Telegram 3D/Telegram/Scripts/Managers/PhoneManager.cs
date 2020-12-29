@@ -22,7 +22,7 @@ namespace Telegram.Auth
 
         private PhoneAuthProvider _provider;
         private string _verificationId;
-        public CustomInputField _phoneNumber;
+      //  public CustomInputField c_phoneNumber;
         public CustomInputField code;
         private const uint PhoneAuthTimeout = 120000;
 
@@ -102,12 +102,11 @@ namespace Telegram.Auth
 
        
 
-        public void VerifyPhoneNumber()
+        public void VerifyPhoneNumber(string phonenumber)
         {
             
-
             _provider = PhoneAuthProvider.GetInstance(Auth);
-            _provider.VerifyPhoneNumber("+1" + _phoneNumber.inputText.text, PhoneAuthTimeout, null,
+            _provider.VerifyPhoneNumber(phonenumber, PhoneAuthTimeout, null,
                 verificationCompleted: (credential) =>
                 {
                     print("verification completed");
@@ -133,17 +132,17 @@ namespace Telegram.Auth
                     print("code auto retrieval timed Out");
                 });
 
-            print(_phoneNumber.inputText.text);
+            print(phonenumber);
 
                
         }
 
-        public void VerifyCode(/*string code, Action<bool, string>*/)
+        public void VerifyCode(string code, Action<bool, string> cb)
         {
 
-            StartCoroutine(VerifyCodeAsync(code.inputText.text /*, cb*/));
+            StartCoroutine(VerifyCodeAsync(code , cb));
         }
-        private IEnumerator VerifyCodeAsync(string code /*, Action<bool, string> cb*/)
+        private IEnumerator VerifyCodeAsync(string code , Action<bool, string> cb)
         {
             LoadingPanel.Instance.LoadingStart(ELoading.Load);
 

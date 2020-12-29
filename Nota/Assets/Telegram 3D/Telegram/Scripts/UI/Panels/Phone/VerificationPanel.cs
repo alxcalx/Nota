@@ -8,13 +8,13 @@ namespace Telegram.Phone
     public class VerificationPanel : MonoBehaviour
     {
         [Header("Components")]
-        [SerializeField] private Image _navBackground;
+     //   [SerializeField] private Image _navBackground;
         [SerializeField] private Image _iconBtnPrev;
         [SerializeField] private Image _iconBtnNext;
         [SerializeField] private Button _btnPrev;
         [SerializeField] private Button _btnNext;
-        [SerializeField] private Text _txtHeader;
-        [SerializeField] private Text _txtDescription;
+     //   [SerializeField] private Text _txtHeader;
+    //   [SerializeField] private Text _txtDescription;
         [SerializeField] private CustomInputField _inputFieldCode;
         [SerializeField] private Button _btnResend;
         [SerializeField] private Text _txtTimer;
@@ -41,15 +41,8 @@ namespace Telegram.Phone
             UpdateLevelTimer(_totalTime);
         }
 
-        public void Init()
-        {
-            SetTheme();
-        }
 
-        public void Initialize(string phoneNumber)
-        {
-            _txtHeader.text = phoneNumber;
-        }
+       
 
         public void InitTimer()
         {
@@ -88,16 +81,6 @@ namespace Telegram.Phone
             _btnNext.interactable = value;
         }
 
-        private void SetTheme()
-        {
-            _navBackground.color = ThemeManager.Instance.NavBackground;
-            _iconBtnPrev.color = ThemeManager.Instance.NavButtonBackground;
-            _iconBtnNext.color = ThemeManager.Instance.NavButtonBackground;
-            _txtHeader.color = ThemeManager.Instance.MainText;
-            _txtDescription.color = ThemeManager.Instance.SubText;
-            _btnResend.GetComponentInChildren<Text>().color = ThemeManager.Instance.MainText;
-            _txtTimerDescription.color = ThemeManager.Instance.SubText;
-            _txtTimer.color = ThemeManager.Instance.SubText;
-        }
+     
     }
 }
