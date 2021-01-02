@@ -68,7 +68,7 @@ namespace Kakera
         {
             FirebaseStorage storage = FirebaseStorage.DefaultInstance;
             StorageReference storage_ref = storage.GetReferenceFromUrl("gs://nota-5bcae.appspot.com");
-            StorageReference profile_images = storage_ref.Child(PhoneManager.Instance.User.UserId);
+            StorageReference profile_images = storage_ref.Child("Users").Child(PhoneManager.Instance.User.UserId).Child("ProfileImage");
 
             var uploadTask = profile_images.PutBytesAsync(texture.EncodeToPNG())
        .ContinueWith((Task<StorageMetadata> task) => {

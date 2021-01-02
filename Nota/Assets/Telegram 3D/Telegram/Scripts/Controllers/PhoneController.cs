@@ -17,7 +17,7 @@ namespace Telegram.Phone
         [SerializeField] private HorizontalScrollSnap _horizontalScrollSnap;
         [SerializeField] private PhoneNumberPanel _phoneNumberPanel;
         [SerializeField] private VerificationPanel _verificationPanel;
-        [SerializeField] private ProfilePanel _profilePanel;
+        [SerializeField] private Profile _profilePanel;
         [SerializeField] private CountryPanel _countryPanel;
         [SerializeField] private ErrorPanel _errorPanel;
 
@@ -34,8 +34,8 @@ namespace Telegram.Phone
             _verificationPanel.OnClickPrev += GoToScreen;
             _verificationPanel.OnClickResend += VerificationPanelOnClickResend;
 
-       //     _profilePanel.Init();
-      //    _profilePanel.OnClickDone += ProfilePanelOnClickDone;
+            //    _profilePanel.Init();
+            _profilePanel.OnClickProfileImage += GoToScreen;
 
             _countryPanel.Init();
             _countryPanel.OnClick += CountryPanelOnClick;
@@ -99,7 +99,7 @@ namespace Telegram.Phone
         {
             Debug.Log("Calling Instance User node");
             _horizontalScrollSnap.GoToScreen(2);
-            _profilePanel.Initialize(data.PhoneNumber, data.UserName, data.PhotoUrl);
+          //  _profilePanel.Initialize(data.PhoneNumber, data.UserName, data.PhotoUrl);
         }
 
         private void InstanceOnCodeSent()

@@ -22,7 +22,6 @@ namespace Telegram.Auth
 
         private PhoneAuthProvider _provider;
         private string _verificationId;
-      //  public CustomInputField c_phoneNumber;
         public CustomInputField code;
         private const uint PhoneAuthTimeout = 120000;
 
@@ -166,7 +165,7 @@ namespace Telegram.Auth
                     if (error)
                     {
                         var newUser = task.Result;
-                     //   var name = "";
+                       var name = "";
                         var userName = "  ";
                         var phoneNumber = newUser.PhoneNumber;
                         var photoUrl = "  ";
@@ -177,7 +176,7 @@ namespace Telegram.Auth
                         PlayerPrefs.SetString(PrefsKeys.PhotoUrl, "  ");
                         PlayerPrefs.Save();
 
-                        var user = new UserModel(/*name,*/ userName, phoneNumber, photoUrl);
+                        var user = new UserModel(name, userName, phoneNumber, photoUrl);
                         FirebaseCore.CreateNewUser(user, newUser.UserId);
 
                        cb(false, phoneNumber);
@@ -185,7 +184,7 @@ namespace Telegram.Auth
                     }
                     else
                     {
-                      //  PlayerPrefs.SetString(PrefsKeys.FullName, model.Name);
+                        PlayerPrefs.SetString(PrefsKeys.FullName, model.Name);
                         PlayerPrefs.SetString(PrefsKeys.Name, model.UserName);
                         PlayerPrefs.SetString(PrefsKeys.Phone, model.PhoneNumber);
                         PlayerPrefs.SetString(PrefsKeys.PhotoUrl, model.PhotoUrl);
