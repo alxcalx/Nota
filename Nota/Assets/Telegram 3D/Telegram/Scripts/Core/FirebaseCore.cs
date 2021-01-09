@@ -9,6 +9,8 @@ using Loading;
 using Telegram.Auth;
 using Telegram.Data;
 using Michsky.UI.ModernUIPack;
+using Nota.Data;
+
 namespace Telegram.Core
 {
     public class FirebaseCore
@@ -17,6 +19,9 @@ namespace Telegram.Core
 
     
         private static float _elapsedTime;
+
+        public static List<string> placeids = new List<string>();
+        public static string fullname;
        
         public static void Init()
         {
@@ -164,6 +169,76 @@ namespace Telegram.Core
             LoadingPanel.Instance.LoadingStop();
         }
 
+        public static IEnumerator UpdateMapId(string placeid)
+        {
+            var setname = "";
+            var latitude = "";
+            var longtitude = "";
+            var altitude = "";
+            var timecreated = "";
+            var referencephotourl = "";
+
+
+            var map = new MapInfo(setname, latitude, longtitude, altitude, timecreated, referencephotourl);
+            var mapJson = JsonUtility.ToJson(map);
+            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("map_list").Child(placeid).SetRawJsonValueAsync(mapJson);
+            yield return new WaitWhile(() => IsTask(task.IsCompleted));
+
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                LoadingPanel.Instance.LoadingStop();
+                yield break;
+            }
+
+        }
+
+        public static void MapListRetrieval()
+        {
+            BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("map_list").ValueChanged += (object sender2, ValueChangedEventArgs e2) =>
+            {
+                if(e2.DatabaseError != null)
+                {
+                    Debug.LogError(e2.DatabaseError.Message);
+                }
+
+                if(e2.Snapshot != null && e2.Snapshot.ChildrenCount > 0)
+                {
+                    foreach(var childSnapshot in e2.Snapshot.Children)
+                    {
+                        string placeid = childSnapshot.Value.ToString();
+                        placeids.Add(placeid);
+
+                        Debug.Log(placeid);
+
+                    }
+
+                }
+
+            };
+
+
+        }
+
+        void NameRetrieval()
+        {
+
+            BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("full_name").ValueChanged += (object sender2, ValueChangedEventArgs e2) =>
+            {
+                if (e2.DatabaseError != null)
+                {
+                    Debug.LogError(e2.DatabaseError.Message);
+                }
+
+                if (e2.Snapshot != null && e2.Snapshot.ChildrenCount > 0)
+                {
+                    fullname = e2.Snapshot.Value.ToString();
+
+                }
+
+            };
+
+
+        }
 
 
         private static bool IsTask(bool value)

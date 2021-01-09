@@ -165,7 +165,7 @@ namespace Telegram.Auth
                     if (error)
                     {
                         var newUser = task.Result;
-                       var name = "";
+                        var name = "";
                         var userName = "  ";
                         var phoneNumber = newUser.PhoneNumber;
                         var photoUrl = "  ";

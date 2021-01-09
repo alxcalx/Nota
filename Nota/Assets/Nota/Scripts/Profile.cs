@@ -7,60 +7,31 @@ using UnityEngine.UI;
 using Firebase.Database;
 using UnityEngine.Networking;
 using System;
+using Telegram.Phone;
 
 public class Profile : MonoBehaviour
 {
     [SerializeField] private Button _btnProfile;
+  //  [SerializeField] private GameObject _root;
 
-    FirebaseAuth auth;
+   
     DatabaseReference reference;
     public FirebaseUser User;
     public RawImage profileimage;
-    string photo_url;
+    public static string photo_url;
     Texture2D texture;
+  //  PhoneController phoneController = new PhoneController();
 
-    public event Action<int> OnClickProfileImage;
+    //  public event Action<int> OnClickProfileImage;
 
     // Start is called before the first frame update
     void Start()
     {
-        auth = FirebaseAuth.DefaultInstance;
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        
+            reference = FirebaseDatabase.DefaultInstance.RootReference;
+            reference.Child(PhoneManager.Instance.Auth.CurrentUser.UserId).Child("photo_url").ValueChanged += HandleValueChanged;
 
-
-        if (auth.CurrentUser != User)
-        {
-
-
-            auth.SignInAnonymouslyAsync().ContinueWith(task =>
-            {
-                if (task.IsCanceled)
-                {
-                    Debug.LogError("SignInAnonymouslyAsync was canceled.");
-                    return;
-                }
-                if (task.IsFaulted)
-                {
-                    Debug.LogError("SignInAnonymouslyAsync encountered an error: " + task.Exception);
-                    return;
-                }
-
-                FirebaseUser newUser = task.Result;
-                Debug.LogFormat("User signed in successfully: {0} ({1})",
-                    newUser.DisplayName, newUser.UserId);
-            });
-
-        }
-        else
-        {
-
-            _btnProfile.onClick.AddListener(() => { OnClickProfileImage?.Invoke(2); });
-
-            reference.Child(auth.CurrentUser.UserId).Child("photo_url").ValueChanged += HandleValueChanged;
-
-        }
-
-        LoadImage(photo_url);
+            LoadImage(photo_url);
 
     }
 
@@ -95,5 +66,7 @@ public class Profile : MonoBehaviour
         
 
     }
+
+ 
 
 }

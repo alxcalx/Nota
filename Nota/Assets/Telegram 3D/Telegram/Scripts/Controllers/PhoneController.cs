@@ -12,8 +12,10 @@ namespace Telegram.Phone
     {
         [Header("Basic")]
         [SerializeField] private GameObject _root;
+        [SerializeField] private GameObject initPanel;
 
         [Header("Panels")]
+       // [SerializeField] private GameObject phoneAuth;
         [SerializeField] private HorizontalScrollSnap _horizontalScrollSnap;
         [SerializeField] private PhoneNumberPanel _phoneNumberPanel;
         [SerializeField] private VerificationPanel _verificationPanel;
@@ -35,7 +37,7 @@ namespace Telegram.Phone
             _verificationPanel.OnClickResend += VerificationPanelOnClickResend;
 
             //    _profilePanel.Init();
-            _profilePanel.OnClickProfileImage += GoToScreen;
+         //   _profilePanel.OnClickProfileImage += GoToScreen;
 
             _countryPanel.Init();
             _countryPanel.OnClick += CountryPanelOnClick;
@@ -57,24 +59,34 @@ namespace Telegram.Phone
 
         public void GoToScreen(int indexPage)
         {
-            _horizontalScrollSnap.GoToScreen(indexPage);
-            var phoneNumber = _phoneNumberPanel.GetPhoneNumber();
+            initPanel.SetActive(false);
+            _root.SetActive(true);
+            
 
-            if (indexPage == 0)
+            if (_root.activeSelf)
             {
+                _horizontalScrollSnap.GoToScreen(indexPage);
+                var phoneNumber = _phoneNumberPanel.GetPhoneNumber();
 
-            }
-            else if (indexPage == 1)
-            {
-             //   _verificationPanel.Initialize(phoneNumber);
-              _verificationPanel.InitTimer();
-               PhoneManager.Instance.VerifyPhoneNumber(phoneNumber);
-            }
-            else if (indexPage == 2)
-            {
-              //  _profilePanel.Initialize(phoneNumber);
+                if (indexPage == 0)
+                {
+
+                }
+                else if (indexPage == 1)
+                {
+                    //   _verificationPanel.Initialize(phoneNumber);
+                    _verificationPanel.InitTimer();
+                    PhoneManager.Instance.VerifyPhoneNumber(phoneNumber);
+                }
+                else if (indexPage == 2)
+                {
+                    //  _profilePanel.Initialize(phoneNumber);
+                }
+
             }
         }
+
+
 
         private void VerificationPanelOnClick(string code)
         {
@@ -93,6 +105,25 @@ namespace Telegram.Phone
                     GoToScreen(2);
                 }
             }); 
+        }
+
+        public void ProfileImageButton()
+        {
+
+
+            if (PhoneManager.Instance.Auth.CurrentUser != null)
+            {
+
+                GoToScreen(2);
+            }
+            else
+            {
+
+                GoToScreen(0);
+            }
+
+
+
         }
 
         private void InstanceOnUserNode(UserModel data)

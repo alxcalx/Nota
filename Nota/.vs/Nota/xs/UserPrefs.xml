@@ -1,26 +1,30 @@
 ﻿<Properties StartupConfiguration="{F78D4972-5AA2-F831-C831-D20F05A9E354}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs">
     <Files>
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs" Line="143" Column="1" />
+      <File FileName="Assets/Scripts/MapInfo.cs" Line="14" Column="7" IsPinned="True" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NotesManager.cs" Line="39" Column="18" IsPinned="True" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/UserModel.cs" IsPinned="True" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs" />
       <File FileName="Assets/MainController_.cs" />
       <File FileName="Assets/SwitchPanels.cs" />
-      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NotesManager.cs" />
-      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NoteController.cs" />
-      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/FirebaseCore.cs" Line="18" Column="5" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/UserModel.cs" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NoteController.cs" Line="58" Column="1" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/FirebaseCore.cs" />
       <File FileName="Assets/Placenote/EditorCoroutines/Scripts/EditorCoroutines.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/LocalCore.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/PrefsKeys.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/ChatModel.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/ContactModel.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/CountryModel.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/MessageModel.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/ChatCore.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/ChatController.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/MainController.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/PhoneController.cs" Line="60" Column="42" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/UI/Extentions/Scripts/ScrollSnap/ScrollSnapBase.cs" Line="26" Column="22" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/PhoneController.cs" />
+      <File FileName="Assets/Nota/Scripts/Profile.cs" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/MapInfoElement.cs" />
+      <File FileName="Assets/Placenote/LibPlacenote/LibPlacenote.cs" />
+      <File FileName="Assets/Placenote/LibPlacenote/MainThreadTaskQueue.cs" />
+      <File FileName="Assets/Placenote/LibPlacenote/PlacenoteCameraManager.cs" />
+      <File FileName="Assets/Placenote/LibPlacenote/PlacenoteListener.cs" />
+      <File FileName="Assets/Placenote/LibPlacenote/PNUtility.cs" />
+      <File FileName="Assets/Placenote/LibPlacenote/FeaturesVisualizer.cs" />
+      <File FileName="Assets/Placenote/Editor/APIKeyCheck.cs" />
+      <File FileName="Assets/Placenote/Editor/LibraryCheck.cs" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/UI/Panels/Phone/PhoneNumberPanel.cs" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs" Line="69" Column="45" />
+      <File FileName="Assets/Unimgpicker/Samples/PickerController.cs" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/IntroController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -28,16 +32,24 @@
           <Node name="Nota" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Firebase" expanded="True" />
+              <Node name="Nota" expanded="True">
+                <Node name="Scripts" expanded="True" />
+              </Node>
               <Node name="Placenote" expanded="True">
+                <Node name="Editor" expanded="True" />
                 <Node name="EditorCoroutines" expanded="True">
                   <Node name="Scripts" expanded="True" />
                 </Node>
                 <Node name="Examples" expanded="True">
                   <Node name="3_StickyNotes" expanded="True">
-                    <Node name="Scripts" expanded="True" />
+                    <Node name="Scripts" expanded="True">
+                      <Node name="StickyNotesMain.cs" selected="True" />
+                    </Node>
                   </Node>
                 </Node>
+                <Node name="LibPlacenote" expanded="True" />
               </Node>
+              <Node name="Scripts" expanded="True" />
               <Node name="Telegram 3D" expanded="True">
                 <Node name="Telegram" expanded="True">
                   <Node name="Scripts" expanded="True">
@@ -45,18 +57,24 @@
                     <Node name="Core" expanded="True">
                       <Node name="Data" expanded="True" />
                     </Node>
-                    <Node name="Managers" expanded="True">
-                      <Node name="PhoneManager.cs" selected="True" />
-                    </Node>
+                    <Node name="Extentions" expanded="True" />
+                    <Node name="Managers" expanded="True" />
                     <Node name="UI" expanded="True">
                       <Node name="Extentions" expanded="True">
                         <Node name="Scripts" expanded="True">
                           <Node name="ScrollSnap" expanded="True" />
+                          <Node name="Utilities" expanded="True" />
                         </Node>
+                      </Node>
+                      <Node name="Panels" expanded="True">
+                        <Node name="Phone" expanded="True" />
                       </Node>
                     </Node>
                   </Node>
                 </Node>
+              </Node>
+              <Node name="Unimgpicker" expanded="True">
+                <Node name="Samples" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -66,7 +84,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e402674e-538e-4380-9b17-f94e9c174495" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c81b6a34-29d5-4a94-9f0c-38b51124301a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

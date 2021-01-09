@@ -7,6 +7,9 @@ using System.Runtime.InteropServices;
 using System.IO;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Telegram.Auth;
+using Telegram.Core;
+
 
 namespace StickyNotes
 {
@@ -27,9 +30,13 @@ namespace StickyNotes
         [SerializeField] Text mLabelText;
 
         [SerializeField] Image saveButtonProgressBar;
+        [SerializeField] GameObject root;
+        [SerializeField] GameObject InitPanel;
 
         private bool mapQualityThresholdCrossed = false;
         private float minMapSize = 200;
+
+        
 
 
 
@@ -58,6 +65,8 @@ namespace StickyNotes
 
             FeaturesVisualizer.EnablePointcloud();
             LibPlacenote.Instance.RegisterListener(this);
+
+            FirebaseCore.MapListRetrieval();
 
 
             // Localization thumbnail handler.
@@ -119,7 +128,7 @@ namespace StickyNotes
 
                 if (mapList.Length == 0)
                 {
-                    mLabelText.text = "No maps found. Create a map first!";
+                    mLabelText.text = "No notes found. Create a note first!";
                     return;
                 }
 
@@ -132,7 +141,12 @@ namespace StickyNotes
                         Debug.Log(mapId.metadata.userdata.ToString(Formatting.None));
                     }
 
+                    foreach (string placeid in FirebaseCore.placeids) {
+                    if (mapId.ToString().Equals(placeid))
+    
                     AddMapToList(mapId);
+
+                    }
                 }
 
                mLabelText.text = "Found these maps";
@@ -361,85 +375,99 @@ namespace StickyNotes
 
 
         public void OnSaveMapClick()
+
         {
-            if (!LibPlacenote.Instance.Initialized())
-            {
-                Debug.Log("SDK not yet initialized");
-                return;
+            if (PhoneManager.Instance.Auth.CurrentUser == null) {
+
+                InitPanel.SetActive(false);
+
+                root.SetActive(true);
             }
-
-            if (!mapQualityThresholdCrossed)
+            else
             {
-               mLabelText.text = "Map quality is not good enough to save. Scan a small area with many features and try again.";
-                return;
-            }
 
-            bool useLocation = Input.location.status == LocationServiceStatus.Running;
-            LocationInfo locationInfo = Input.location.lastData;
-
-            mLabelText.text = "Saving...";
-
-            LibPlacenote.Instance.SaveMap((mapId) =>
-            {
-                LibPlacenote.Instance.StopSession();
-                FeaturesVisualizer.ClearPointcloud();
-
-                mSaveMapId = mapId;
-
-                mMappingPanel.SetActive(false);
-
-                LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
-
-
-                metadata.name = "Note: " + System.DateTime.Now.ToString();
-
-             mLabelText.text = "Saved Map Name: " + metadata.name;
-
-                JObject userdata = new JObject();
-                metadata.userdata = userdata;
-
-                JObject notesList = GetComponent<NotesManager>().Notes2JSON();
-
-                userdata["notesList"] = notesList;
-                GetComponent<NotesManager>().ClearNotes();
-
-                if (useLocation)
+                if (!LibPlacenote.Instance.Initialized())
                 {
-                    metadata.location = new LibPlacenote.MapLocation();
-                    metadata.location.latitude = locationInfo.latitude;
-                    metadata.location.longitude = locationInfo.longitude;
-                    metadata.location.altitude = locationInfo.altitude;
+                    Debug.Log("SDK not yet initialized");
+                    return;
                 }
 
-                LibPlacenote.Instance.SetMetadata(mapId, metadata, (success) =>
+                if (!mapQualityThresholdCrossed)
                 {
-                    if (success)
+                    mLabelText.text = "Map quality is not good enough to save. Scan a small area with many features and try again.";
+                    return;
+                }
+
+                bool useLocation = Input.location.status == LocationServiceStatus.Running;
+                LocationInfo locationInfo = Input.location.lastData;
+
+                mLabelText.text = "Saving...";
+
+                LibPlacenote.Instance.SaveMap((mapId) =>
+                {
+                    
+                    LibPlacenote.Instance.StopSession();
+                    FeaturesVisualizer.ClearPointcloud();
+
+                    mSaveMapId = mapId;
+
+                    FirebaseCore.UpdateMapId(mapId);
+
+                    mMappingPanel.SetActive(false);
+
+                    LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
+
+
+                    metadata.name = "Note: " + System.DateTime.Now.ToString();
+
+                    mLabelText.text = "Saved Map Name: " + metadata.name;
+
+                    JObject userdata = new JObject();
+                    metadata.userdata = userdata;
+
+                    JObject notesList = GetComponent<NotesManager>().Notes2JSON();
+
+                    userdata["notesList"] = notesList;
+                    GetComponent<NotesManager>().ClearNotes();
+
+                    if (useLocation)
                     {
-                        Debug.Log("Meta data successfully saved!");
+                        metadata.location = new LibPlacenote.MapLocation();
+                        metadata.location.latitude = locationInfo.latitude;
+                        metadata.location.longitude = locationInfo.longitude;
+                        metadata.location.altitude = locationInfo.altitude;
+                    }
+
+                    LibPlacenote.Instance.SetMetadata(mapId, metadata, (success) =>
+                    {
+                        if (success)
+                        {
+                            Debug.Log("Meta data successfully saved!");
+                        }
+                        else
+                        {
+                            Debug.Log("Meta data failed to save");
+                        }
+                    });
+                    mCurrMapDetails = metadata;
+                }, (completed, faulted, percentage) =>
+                {
+                    if (completed)
+                    {
+                        mLabelText.text = "Upload Complete! You can now click My Maps and choose a map to load.";
+                        mInitPanel.SetActive(true);
+
+                    }
+                    else if (faulted)
+                    {
+                        mLabelText.text = "Upload of Map Named: " + mCurrMapDetails.name + "faulted";
                     }
                     else
                     {
-                        Debug.Log("Meta data failed to save");
+                        mLabelText.text = "Uploading Note " + "(" + (percentage * 100.0f).ToString("F2") + " %)";
                     }
                 });
-                mCurrMapDetails = metadata;
-            }, (completed, faulted, percentage) =>
-            {
-                if (completed)
-                {
-                  mLabelText.text = "Upload Complete! You can now click My Maps and choose a map to load.";
-                    mInitPanel.SetActive(true);
-
-                }
-                else if (faulted)
-                {
-                   mLabelText.text = "Upload of Map Named: " + mCurrMapDetails.name + "faulted";
-                }
-                else
-                {
-                  mLabelText.text = "Uploading Map " + "(" + (percentage*100.0f).ToString("F2") + " %)";
-                }
-            });
+            }
         }
 
 
