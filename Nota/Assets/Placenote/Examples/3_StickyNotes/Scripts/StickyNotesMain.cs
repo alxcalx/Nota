@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Telegram.Auth;
 using Telegram.Core;
+using Michsky.UI.ModernUIPack;
 
 
 namespace StickyNotes
@@ -17,17 +18,21 @@ namespace StickyNotes
     {
         [SerializeField] GameObject mMapSelectedPanel;
         [SerializeField] GameObject mInitPanel;
+        [SerializeField] GameObject mSendPanel;
         [SerializeField] GameObject mMappingPanel;
         [SerializeField] GameObject mMapListPanel;
         [SerializeField] GameObject mMapLoadPanel;
         [SerializeField] GameObject mMapLoadButtonPanel;
         [SerializeField] RawImage mLocalizationThumbnail;
+        [SerializeField] GameObject mProfileImage;
 
 
         [SerializeField] GameObject mListElement;
         [SerializeField] RectTransform mListContentParent;
         [SerializeField] ToggleGroup mToggleGroup;
         [SerializeField] Text mLabelText;
+        [SerializeField] CustomInputField mNotename;
+        [SerializeField] GameObject metaname;
 
         [SerializeField] Image saveButtonProgressBar;
         [SerializeField] GameObject root;
@@ -67,6 +72,8 @@ namespace StickyNotes
             LibPlacenote.Instance.RegisterListener(this);
 
             FirebaseCore.MapListRetrieval();
+
+            OnNewMapClick();
 
 
             // Localization thumbnail handler.
@@ -109,7 +116,7 @@ namespace StickyNotes
         public void OnSearchMapsClick()
         {
 
-         mLabelText.text = "Searching for saved maps";
+         mLabelText.text = "Searching for saved notes";
 
             LocationInfo locationInfo = Input.location.lastData;
 
@@ -149,7 +156,7 @@ namespace StickyNotes
                     }
                 }
 
-               mLabelText.text = "Found these maps";
+                mLabelText.text = "Found these notes";
                 mMapListPanel.SetActive(true);
                 mInitPanel.SetActive(false);
 
@@ -191,7 +198,31 @@ namespace StickyNotes
             });
         }
         */
+        public void OnShareNotesClick()
+        {
+            NotesList notesList = new NotesList();
+            if (PhoneManager.Instance.Auth.CurrentUser == null)
+            {
 
+                mLabelText.text = "Please login /register first. Tap on the user icon to begin.";
+
+            }
+            if (notesList.notes == null)
+            {
+                mLabelText.text = "Please create a note";
+
+            }
+
+            if (PhoneManager.Instance.Auth.CurrentUser != null && notesList.notes != null)
+            {
+                OnSaveMapClick();
+                mInitPanel.SetActive(false);
+                mSendPanel.SetActive(true);
+
+
+            }
+
+        }
 
         public void OnCancelClick()
         {
@@ -374,18 +405,29 @@ namespace StickyNotes
         }
 
 
-        public void OnSaveMapClick()
-
+        public void OnPreSaveMapClick()
         {
-            if (PhoneManager.Instance.Auth.CurrentUser == null) {
+            if (PhoneManager.Instance.Auth.CurrentUser == null)
+            {
 
-                InitPanel.SetActive(false);
-
-                root.SetActive(true);
+                mLabelText.text = "Please first sign in/register to save. Tap on the user icon.";
+                // mProfileImage.GetComponent<Shake>().ShakeMe();
             }
             else
             {
+                metaname.SetActive(true);
 
+
+            }
+
+
+        }
+
+        public void OnSaveMapClick()
+
+        {
+          
+            
                 if (!LibPlacenote.Instance.Initialized())
                 {
                     Debug.Log("SDK not yet initialized");
@@ -394,7 +436,7 @@ namespace StickyNotes
 
                 if (!mapQualityThresholdCrossed)
                 {
-                    mLabelText.text = "Map quality is not good enough to save. Scan a small area with many features and try again.";
+                    mLabelText.text = "The quality is not good enough to save. Scan a small area with many features and try again.";
                     return;
                 }
 
@@ -407,20 +449,22 @@ namespace StickyNotes
                 {
                     
                     LibPlacenote.Instance.StopSession();
-                    FeaturesVisualizer.ClearPointcloud();
+                    FeaturesVisualizer.ClearPointcloud(); 
 
                     mSaveMapId = mapId;
-
-                    FirebaseCore.UpdateMapId(mapId);
 
                     mMappingPanel.SetActive(false);
 
                     LibPlacenote.MapMetadataSettable metadata = new LibPlacenote.MapMetadataSettable();
 
 
-                    metadata.name = "Note: " + System.DateTime.Now.ToString();
+                    metadata.name = mNotename.inputText.text;
 
-                    mLabelText.text = "Saved Map Name: " + metadata.name;
+                    metaname.SetActive(false);
+
+                    mLabelText.text = "Saved Note Name: " + metadata.name;
+
+                    FirebaseCore.UpdateMapId(mapId, locationInfo.latitude.ToString(), locationInfo.longitude.ToString(), locationInfo.altitude.ToString(), DateTime.Now.ToString(), metadata.name );
 
                     JObject userdata = new JObject();
                     metadata.userdata = userdata;
@@ -467,7 +511,7 @@ namespace StickyNotes
                         mLabelText.text = "Uploading Note " + "(" + (percentage * 100.0f).ToString("F2") + " %)";
                     }
                 });
-            }
+            
         }
 
 
@@ -534,6 +578,11 @@ namespace StickyNotes
                mLabelText.text = "Point your phone at the area shown in the thumbnail";
             }
         }
+
+
+
     }
+
+
 
 }

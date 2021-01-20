@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using Telegram.Core;
 
 /// <summary>
 /// Class that contains parameter and buffer for a YUV 420 image from ARKit
@@ -1573,6 +1574,7 @@ public class LibPlacenote : MonoBehaviour
             }
         });
 
+        
     }
 
 
@@ -1606,6 +1608,7 @@ public class LibPlacenote : MonoBehaviour
                         Instance.mThumbnailTexture.width, Instance.mThumbnailTexture.height));
                     byte[] imgBuffer = Instance.mThumbnailTexture.EncodeToPNG();
                     System.IO.File.WriteAllBytes(thumbnailPath, imgBuffer);
+                    FirebaseCore.UploadMapThumbnail(Instance.mThumbnailTexture);
                 }
 
                 savedCb(mapId);

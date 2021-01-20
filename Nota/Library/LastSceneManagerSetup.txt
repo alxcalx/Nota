@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Nota/Nota.unity
+- path: Assets/IOSGoodies/Example/ExampleScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

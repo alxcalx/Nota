@@ -48,6 +48,11 @@ namespace StickyNotes
         private GameObject mCurrNote;
         private NoteInfo mCurrNoteInfo;
 
+        public GameObject mFeaturePointIndicator;
+
+        private Pose placementPose;
+        private bool placementPoseIsValid = false;
+
         [SerializeField] ARRaycastManager mRaycastManager;
 
         // Use this for initialization
@@ -80,6 +85,9 @@ namespace StickyNotes
         // Update checks for hit test
         void Update()
         {
+            UpdatePlacementPose();
+            UpdatePlacementIndicator();
+
             // For hit testing on the device.
             if (Input.touchCount > 0)
             {
@@ -124,20 +132,20 @@ namespace StickyNotes
                                 ToggleButtons();
                             }
                         }
-                        else
-                        {
-                            Debug.Log("Creating new note.");
+                      //  else
+                      //  {
+                         //   Debug.Log("Creating new note.");
 
 
 
                             // prioritize reults types
-                            TrackableType resultType = TrackableType.FeaturePoint;
-                            if (HitTestWithResultType(touch.position, resultType))
-                            {
-                                Debug.Log("Found a hit test result");
-                            }
+                       //     TrackableType resultType = TrackableType.FeaturePoint;
+                     //       if (HitTestWithResultType(touch.position, resultType))
+                      //      {
+                        //        Debug.Log("Found a hit test result");
+                        //    }
 
-                        }
+                      //  }
                     }
                 }
             }
@@ -366,6 +374,49 @@ namespace StickyNotes
                     mNotesObjList.Add(note);
                     mNotesInfoList.Add(noteInfo);
                 }
+            }
+        }
+
+
+        public void AddNewNote()
+        {
+
+            HitTestWithResultType(Camera.current.ViewportToScreenPoint(new Vector3(.5f, .5f)), TrackableType.FeaturePoint);
+
+
+        }
+
+        private void UpdatePlacementIndicator()
+        {
+            if (placementPoseIsValid)
+            {
+                mFeaturePointIndicator.SetActive(true);
+                mFeaturePointIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
+
+            }
+            else
+            {
+                mFeaturePointIndicator.SetActive(false);
+
+            }
+
+        }
+
+        private void UpdatePlacementPose()
+        {
+            var screenCenter = Camera.current.ViewportToScreenPoint(new Vector3(0.5f, 0.5f));
+            var hits = new List<ARRaycastHit>();
+            mRaycastManager.Raycast(screenCenter, hits, TrackableType.FeaturePoint);
+
+            placementPoseIsValid = hits.Count > 0;
+            if (placementPoseIsValid)
+            {
+
+                placementPose = hits[0].pose;
+                var cameraForward = Camera.current.transform.forward;
+                var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+                placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+
             }
         }
     }

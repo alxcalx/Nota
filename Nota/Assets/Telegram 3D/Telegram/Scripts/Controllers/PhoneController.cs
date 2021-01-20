@@ -120,11 +120,13 @@ namespace Telegram.Phone
             {
 
                 GoToScreen(0);
+                
             }
 
 
 
         }
+
 
         private void InstanceOnUserNode(UserModel data)
         {

@@ -10,6 +10,8 @@ using Telegram.Auth;
 using Telegram.Data;
 using Michsky.UI.ModernUIPack;
 using Nota.Data;
+using Firebase.Storage;
+using System.Threading.Tasks;
 
 namespace Telegram.Core
 {
@@ -22,6 +24,7 @@ namespace Telegram.Core
 
         public static List<string> placeids = new List<string>();
         public static string fullname;
+        public static string download_url;
        
         public static void Init()
         {
@@ -169,14 +172,14 @@ namespace Telegram.Core
             LoadingPanel.Instance.LoadingStop();
         }
 
-        public static IEnumerator UpdateMapId(string placeid)
+        public static IEnumerator UpdateMapId(string placeid, string latitude_, string longtitude_, string altitude_, string timecreated_, string setname_)
         {
-            var setname = "";
-            var latitude = "";
-            var longtitude = "";
-            var altitude = "";
-            var timecreated = "";
-            var referencephotourl = "";
+            var setname = setname_;
+            var latitude = latitude_;
+            var longtitude = longtitude_;
+            var altitude = altitude_;
+            var timecreated = timecreated_;
+            var referencephotourl = download_url;
 
 
             var map = new MapInfo(setname, latitude, longtitude, altitude, timecreated, referencephotourl);
@@ -237,6 +240,31 @@ namespace Telegram.Core
 
             };
 
+
+        }
+
+        public static void UploadMapThumbnail(Texture2D texture)
+        {
+            FirebaseStorage storage = FirebaseStorage.DefaultInstance;
+            StorageReference storage_ref = storage.GetReferenceFromUrl("gs://nota-5bcae.appspot.com");
+            StorageReference profile_images = storage_ref.Child("Users").Child(PhoneManager.Instance.User.UserId).Child("ReferencePhoto");
+
+            var uploadTask = profile_images.PutBytesAsync(texture.EncodeToPNG())
+       .ContinueWith((Task<StorageMetadata> task) => {
+           if (task.IsFaulted || task.IsCanceled)
+           {
+               Debug.Log(task.Exception.ToString());
+               // Uh-oh, an error occurred!
+           }
+           else
+           {
+               // Metadata contains file metadata such as size, content-type, and download URL.
+               Firebase.Storage.StorageMetadata metadata = task.Result;
+               download_url = profile_images.GetDownloadUrlAsync().ToString();
+               Debug.Log("Finished uploading...");
+               Debug.Log("download url = " + download_url);
+           }
+       });
 
         }
 

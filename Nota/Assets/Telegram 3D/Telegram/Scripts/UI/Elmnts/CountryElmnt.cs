@@ -29,7 +29,7 @@ namespace Telegram.UI
             _txtDiallingCode.text = _diallingCode = diallingCode;
             _txtCountryName.text = _countryName = countryName;
 
-            SetTheme();
+          //  SetTheme();
         }
 
         private void SetTheme()

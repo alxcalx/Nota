@@ -29,10 +29,14 @@ public class Profile : MonoBehaviour
     {
         
             reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        if (PhoneManager.Instance.User.UserId != null)
+        {
             reference.Child(PhoneManager.Instance.Auth.CurrentUser.UserId).Child("photo_url").ValueChanged += HandleValueChanged;
 
             LoadImage(photo_url);
 
+        }
     }
 
  
