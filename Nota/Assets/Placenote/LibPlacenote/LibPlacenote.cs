@@ -1553,8 +1553,7 @@ public class LibPlacenote : MonoBehaviour
             status.mapId, status.completed, status.faulted, status.bytesTransferred, status.bytesTotal)
         );
         MainThreadTaskQueue.InvokeOnMainThread(() =>
-        {
-            if (statusClone.completed)
+        {            if (statusClone.completed)
             {
                 Debug.Log("Uploaded map!");
                 progressCb(true, false, 1);

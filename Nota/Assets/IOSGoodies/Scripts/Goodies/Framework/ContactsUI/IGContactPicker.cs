@@ -7,6 +7,8 @@ namespace DeadMosquito.IosGoodies
 	using Internal;
 	using JetBrains.Annotations;
 	using UnityEngine;
+    
+    using Michsky.UI.ModernUIPack;
 
 	/// <summary>
 	/// Class to interact with contacts
@@ -17,6 +19,9 @@ namespace DeadMosquito.IosGoodies
 		[MonoPInvokeCallback(typeof(IGUtils.ActionStringCallbackDelegate))]
 		static void ContactPickerCallback(IntPtr actionPtr, string data)
 		{
+            GameObject gameObject = new GameObject();
+            CustomInputField inputField = gameObject.GetComponentInParent<CustomInputField>();
+            
 			if (Debug.isDebugBuild)
 			{
 				Debug.Log("ContactPickerCallback: " + data);
@@ -26,6 +31,8 @@ namespace DeadMosquito.IosGoodies
 				var action = actionPtr.Cast<Action<Contact>>();
 				var contact = Contact.FromJson(data);
 				action(contact);
+
+                inputField.inputText.text = contact.PhoneNumbers.ToString();
 			}
 		}
 

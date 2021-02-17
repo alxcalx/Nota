@@ -52,15 +52,6 @@
     <UnityVersion>2020.1.4f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Modern UI Pack\Editor\ContextMenu.cs" />
-    <Compile Include="Assets\Modern UI Pack\Editor\InitMUIP.cs" />
-    <Compile Include="Assets\Unimgpicker\Editor\XcodeConfigurator.cs" />
-    <Compile Include="Assets\Placenote\Editor\APIKeyCheck.cs" />
-    <Compile Include="Assets\Modern UI Pack\Editor\ExtendedColorPicker.cs" />
-    <Compile Include="Assets\Placenote\Editor\LibraryCheck.cs" />
-    <Compile Include="Assets\Modern UI Pack\Editor\UIManagerEditor.cs" />
-    <Compile Include="Assets\Placenote\Editor\PostBuildTrigger.cs" />
-    <Compile Include="Assets\Placenote\Editor\PlacenoteVersionInfo.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\BiometricsAuthentication.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\PluginFeature.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\IosGoodiesGettingStartedWindow.cs" />
@@ -69,12 +60,21 @@
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\RateAppDialogFeature.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\DefineUtils.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\SocialShare.cs" />
+    <Compile Include="Assets\Modern UI Pack\Editor\ContextMenu.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\ContactPickerFeature.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\CleanFeatures.cs" />
+    <Compile Include="Assets\Modern UI Pack\Editor\InitMUIP.cs" />
+    <Compile Include="Assets\Unimgpicker\Editor\XcodeConfigurator.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Postprocessing\IGProjectPostprocessor.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\IosGoodiesSettingsEditor.cs" />
+    <Compile Include="Assets\Placenote\Editor\APIKeyCheck.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\ImagePicker.cs" />
+    <Compile Include="Assets\Modern UI Pack\Editor\ExtendedColorPicker.cs" />
     <Compile Include="Assets\IOSGoodies\Editor\Config\Features\Features.cs" />
+    <Compile Include="Assets\Placenote\Editor\LibraryCheck.cs" />
+    <Compile Include="Assets\Modern UI Pack\Editor\UIManagerEditor.cs" />
+    <Compile Include="Assets\Placenote\Editor\PostBuildTrigger.cs" />
+    <Compile Include="Assets\Placenote\Editor\PlacenoteVersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Unimgpicker\Editor\NSPhotoLibraryUsageDescription.txt" />
@@ -733,6 +733,9 @@
     <Reference Include="Unity.XR.ARFoundation">
       <HintPath>Library\ScriptAssemblies\Unity.XR.ARFoundation.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.DeviceSimulator.Tests.Common">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Tests.Common.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -747,6 +750,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
@@ -768,12 +774,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.DeviceSimulator.Tests.Common">
-      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Tests.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.DeviceSimulator.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

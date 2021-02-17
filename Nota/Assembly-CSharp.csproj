@@ -65,22 +65,31 @@
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Extentions\Scripts\Utilities\UI_InfiniteScroll.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Notification\NotificationManagerEditor.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerTooltip.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Internal\Serialization\Json.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Window\WindowManagerButton.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Panels\Phone\ErrorPanel.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactRelation.cs" />
     <Compile Include="Assets\Placenote\LibPlacenote\LocalizationThumbnailSelector.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Slider\RadialSliderEditor.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Progress Bar\ProgressBar.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\UI\EnableOnClick.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerHSelector.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Internal\IosGoodiesSettings.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactSocialProfile.cs" />
     <Compile Include="Assets\Placenote\LibPlacenote\FeaturesVisualizer.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGInfoExample.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Dropdown\CustomDropdown.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\EventKit\IGCalendar.cs" />
     <Compile Include="Assets\Unimgpicker\Scripts\IPicker.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerSwitch.cs" />
     <Compile Include="Assets\Placenote\LibPlacenote\PNUtility.cs" />
     <Compile Include="Assets\Placenote\Examples\4_PaintBrush\DrawingHistoryManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGFilePicker.cs" />
     <Compile Include="Assets\Placenote\Examples\1_HelloWorld\HelloWorldMain.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Dropdown\DropdownMultiSelectEditor.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Tooltip\TooltipManager.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\Hardware\IGFlashlight.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Panels\Loading\LoadingPanel.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerProgressBar.cs" />
     <Compile Include="Assets\MainController_.cs" />
@@ -88,9 +97,14 @@
     <Compile Include="Assets\Placenote\Examples\2_BuildACity\ModelManager.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Horizontal Selector\HorizontalSelector.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerNotification.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\Contact.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Managers\ThemeManager.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Internal\StringUtils.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Controllers\MainController.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Other\IGDevice.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Internal\Check.cs" />
     <Compile Include="Assets\WanzyeeStudio\Scripts\Basic\Json\RectConverter.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGOpenAppsExample.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerWithIcon.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Controllers\IntroController.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerBasicWithIcon.cs" />
@@ -98,6 +112,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Extentions\JsonHelper.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGMapsExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Rendering\Ripple.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Panels\Chat\ChatPanel.cs" />
@@ -116,13 +131,20 @@
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Core\Data\ContactModel.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Extentions\ObservedValue.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Rendering\UIGradient.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactUrlAddress.cs" />
     <Compile Include="Assets\Placenote\Examples\3_StickyNotes\Scripts\NotesManager.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGDialogs.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Panels\Phone\VerificationPanel.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerWithIconEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGMaps.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactPostalAddress.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerToggle.cs" />
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutines.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerButtonEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGVideoEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactPhoneNumber.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\Hardware\IGHapticFeedback.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManager.cs" />
     <Compile Include="Assets\Placenote\Toolkits\Simulator\SimulatorSetSkybox.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Input Field\CustomInputField.cs" />
@@ -130,15 +152,22 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Switch\SwitchManagerEditor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\LocalAuthentication\IGLocalAuthentication.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Slider\RangeSlider.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Switch\SwitchManager.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\IGContactPicker.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Context Menu\ContextMenuManager.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Elmnts\ContactElmnt.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Window\WindowManager.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactDate.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGActionSheet.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Tooltip\TooltipContent.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGImagePicker.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGDateTimePicker.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Extentions\Scripts\ScrollSnap\IScrollSnap.cs" />
     <Compile Include="Assets\Unimgpicker\Samples\Rotator.cs" />
     <Compile Include="Assets\WanzyeeStudio\Scripts\Basic\Json\RectOffsetConverter.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGDialogsExample.cs" />
     <Compile Include="Assets\Placenote\Examples\1_HelloWorld\ReticleController.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Managers\PhoneManager.cs" />
     <Compile Include="Assets\Placenote\LibPlacenote\LibPlacenote.cs" />
@@ -146,6 +175,8 @@
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Panels\Chat\ContactPanel.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Slider\RangeMinSlider.cs" />
     <Compile Include="Assets\Unimgpicker\Scripts\PickeriOS.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactInstantMessageAddress.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Other\Enum\ImageFormat.cs" />
     <Compile Include="Assets\Placenote\Examples\4_PaintBrush\PaintController.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Progress Bar\PBFilled.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\UI\Panels\Phone\PhoneNumberPanel.cs" />
@@ -153,9 +184,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerProgressBarLoop.cs" />
     <Compile Include="Assets\Placenote\Examples\4_PaintBrush\GraphicsLineRenderer.cs" />
+    <Compile Include="Assets\SharePanel.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Notification\NotificationStacking.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Window\WindowDragger.cs" />
     <Compile Include="Assets\AuthManager.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGCalendarExample.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerDropdown.cs" />
     <Compile Include="Assets\WanzyeeStudio\Scripts\Basic\Json\QuaternionConverter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
@@ -172,11 +205,14 @@
     <Compile Include="Assets\WanzyeeStudio\Scripts\Basic\Json\DictionaryConverter.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Core\Data\CountryModel.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerIconEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\ExampleUtil.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Animated Icon\AnimatedIconHandler.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGHardwareExample.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Controllers\PhoneController.cs" />
     <Compile Include="Assets\Placenote\Examples\4_PaintBrush\DrawLineManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Progress Bar\ProgressBarEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Internal\Serialization\JsonExt.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Core\ChatCore.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerBasicIconEditor.cs" />
     <Compile Include="Assets\Nota\Scripts\Profile.cs" />
@@ -197,9 +233,12 @@
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerIcon.cs" />
     <Compile Include="Assets\Unimgpicker\Scripts\PickerAndroid.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Horizontal Selector\HorizontalSelectorEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\UI\IosGoodiesDemoController.cs" />
     <Compile Include="Assets\Unimgpicker\Samples\PickerController.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Window\WindowManagerEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactEmail.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Internal\IGUtils.cs" />
     <Compile Include="Assets\SwitchPanels.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Core\Data\UserModel.cs" />
@@ -219,6 +258,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Slider\SliderManagerEditor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGShareExample.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGApps.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGLoadingScreen.cs" />
     <Compile Include="Assets\Telegram 3D\Telegram\Scripts\Extentions\ExtensionCoroutine.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Tooltip\TooltipManagerEditor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -239,59 +281,18 @@
     <Compile Include="Assets\ProfileEdit.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Slider\RadialSlider.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\UI Manager\UIManagerSliderEditor.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\StoreKit\IGAppStore.cs" />
     <Compile Include="Assets\WanzyeeStudio\Scripts\Basic\Json\Vector2Converter.cs" />
     <Compile Include="Assets\Placenote\Examples\2_BuildACity\BuildACity.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Rendering\UIGradientEditor.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Notification\NotificationManager.cs" />
     <Compile Include="Assets\Scripts\MapInfo.cs" />
+    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\MessageUI\IGShare.cs" />
     <Compile Include="Assets\Modern UI Pack\Scripts\Button\ButtonManagerBasicWithIconEditor.cs" />
     <Compile Include="Assets\WanzyeeStudio\Scripts\Basic\Json\BoundsConverter.cs" />
     <Compile Include="Assets\Placenote\Examples\3_StickyNotes\Scripts\NoteController.cs" />
     <Compile Include="Assets\Placenote\EditorCoroutines\Scripts\EditorCoroutineExtensions.cs" />
-    <Compile Include="Assets\SharePanel.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Internal\Serialization\Json.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactRelation.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\UI\EnableOnClick.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Internal\IosGoodiesSettings.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactSocialProfile.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGInfoExample.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\EventKit\IGCalendar.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGFilePicker.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\Hardware\IGFlashlight.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\Contact.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Internal\StringUtils.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Other\IGDevice.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Internal\Check.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGOpenAppsExample.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGMapsExample.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactUrlAddress.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGDialogs.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGMaps.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactPostalAddress.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGVideoEditor.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactPhoneNumber.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\Hardware\IGHapticFeedback.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\LocalAuthentication\IGLocalAuthentication.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\IGContactPicker.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactDate.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGActionSheet.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGImagePicker.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGDateTimePicker.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGDialogsExample.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactInstantMessageAddress.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Other\Enum\ImageFormat.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGCalendarExample.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\ExampleUtil.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGHardwareExample.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Internal\Serialization\JsonExt.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\UI\IosGoodiesDemoController.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\ContactsUI\Entity\ContactEmail.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Internal\IGUtils.cs" />
-    <Compile Include="Assets\IOSGoodies\Example\Scripts\IGShareExample.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\AppInteraction\IGApps.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\NoFrameworkDeps\UI\IGLoadingScreen.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\StoreKit\IGAppStore.cs" />
-    <Compile Include="Assets\IOSGoodies\Scripts\Goodies\Framework\MessageUI\IGShare.cs" />
+    <Compile Include="Assets\Nota\Scripts\Recepients.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -928,6 +929,9 @@
     <Reference Include="Unity.XR.ARFoundation">
       <HintPath>Library\ScriptAssemblies\Unity.XR.ARFoundation.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.DeviceSimulator.Tests.Common">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Tests.Common.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -942,6 +946,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
@@ -963,12 +970,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.DeviceSimulator.Tests.Common">
-      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Tests.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.DeviceSimulator.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

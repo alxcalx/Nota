@@ -166,6 +166,7 @@ namespace DeadMosquito.IosGoodies.Example
 #else
 			ExampleUtil.LogFeatureDisabled();
 #endif
+            
 		}
 
 		#endregion

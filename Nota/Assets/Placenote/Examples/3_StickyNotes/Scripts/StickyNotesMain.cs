@@ -277,7 +277,7 @@ namespace StickyNotes
             }
 
      
-         mLabelText.text = "Loading Map ID: " + mSelectedMapId;
+         mLabelText.text = "Loading Note ID: " + mSelectedMapId;
 
             LibPlacenote.Instance.LoadMap(mSelectedMapId, (completed, faulted, percentage) =>
             {

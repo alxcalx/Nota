@@ -195,6 +195,27 @@ namespace Telegram.Core
 
         }
 
+        public static IEnumerator AddInvites(string phonenumber)
+        {
+            LibPlacenote.MapInfo mapInfo = new LibPlacenote.MapInfo();
+
+            string key = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("map_list").Child(mapInfo.placeId).Child("Recepients").Push().Key;
+            Recepients recepients = new Recepients(phonenumber);
+   
+            Dictionary<string, object> childUpdates = new Dictionary<string, object>();
+            childUpdates["/Recepients/" + key] = recepients.ToString();
+            var task = BaseRef.UpdateChildrenAsync(childUpdates);
+
+            yield return new WaitWhile(() => IsTask(task.IsCompleted));
+
+            if (task.IsFaulted || task.IsCanceled)
+            {
+                LoadingPanel.Instance.LoadingStop();
+                yield break;
+            }
+
+        }
+
         public static void MapListRetrieval()
         {
             BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("map_list").ValueChanged += (object sender2, ValueChangedEventArgs e2) =>
