@@ -16,16 +16,21 @@ public class ProfileEdit : MonoBehaviour
     public CustomInputField phoneNumber;
     public CustomInputField fullname;
     public RawImage profile_image;
-    SwitchPanels switchPanels;
+    public GameObject InitPanel;
+    public GameObject CreateAccountPanel;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(setImage(PickerController.download_url));
+        StartCoroutine(setImage(PlayerPrefs.GetString("photo_url")));
 
         //Replace inputfield text the with the phonenumber of the current user
         phoneNumber.inputText.text = PhoneManager.Instance.Auth.CurrentUser.PhoneNumber;
+
+        username.inputText.text = PlayerPrefs.GetString("username");
+        fullname.inputText.text = PlayerPrefs.GetString("name");
+
 
     }
 
@@ -44,21 +49,42 @@ public class ProfileEdit : MonoBehaviour
         www = null;
     }
 
+    public void UpdateProfile()
+    {
+        StartCoroutine(UpdateUsername());
+        StartCoroutine(UpdateProfilePic());
+        StartCoroutine(UpdateProfileName());
+        InitPanel.SetActive(true);
+        CreateAccountPanel.SetActive(false);
+       
+    }
 
 
-    public void CreateProfile()
+    private IEnumerator UpdateUsername()
     {
         //Update Username within the database
-        FirebaseCore.UpdateUserNameAsync(username.inputText.text);
-
-        //Update the photo url within the database
-        FirebaseCore.UpdatePrfofilePicAsync(PickerController.download_url);
-
-        FirebaseCore.UpdateProfileNameAsync(fullname.inputText.text);
-
-        
-        switchPanels.initPanel();
-
+        yield return FirebaseCore.UpdateUserNameAsync(username.inputText.text);
 
     }
+
+    private IEnumerator UpdateProfilePic()
+    {
+        //Update the photo url within the database
+        yield return FirebaseCore.UpdatePrfofilePicAsync(PickerController.download_url);
+    }
+
+    private IEnumerator UpdateProfileName()
+    {
+       yield return FirebaseCore.UpdateProfileNameAsync(fullname.inputText.text);
+
+    }
+        
+
+        
+
+        
+        
+
+
+   
 }

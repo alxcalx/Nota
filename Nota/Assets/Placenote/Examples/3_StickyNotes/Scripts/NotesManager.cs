@@ -85,8 +85,8 @@ namespace StickyNotes
         // Update checks for hit test
         void Update()
         {
-            UpdatePlacementPose();
-            UpdatePlacementIndicator();
+          //  UpdatePlacementPose();
+           // UpdatePlacementIndicator();
 
             // For hit testing on the device.
             if (Input.touchCount > 0)

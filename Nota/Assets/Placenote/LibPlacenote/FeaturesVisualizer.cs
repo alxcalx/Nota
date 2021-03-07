@@ -48,6 +48,8 @@ public class FeaturesVisualizer : MonoBehaviour, PlacenoteListener
     {
         // Set colors of point cloud
 
+        Debug.Log("Point cloud enabled");
+
         sInstance.gradient = new Gradient();
 
         // Populate the color keys at the relative time 0 and 1 (0 and 100%)

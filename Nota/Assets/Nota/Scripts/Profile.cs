@@ -20,40 +20,29 @@ public class Profile : MonoBehaviour
     public RawImage profileimage;
     public static string photo_url;
     Texture2D texture;
-  //  PhoneController phoneController = new PhoneController();
+
+    //  PhoneController phoneController = new PhoneController();
 
     //  public event Action<int> OnClickProfileImage;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-            reference = FirebaseDatabase.DefaultInstance.RootReference;
+       
 
-        if (PhoneManager.Instance.User.UserId != null)
-        {
-            reference.Child(PhoneManager.Instance.Auth.CurrentUser.UserId).Child("photo_url").ValueChanged += HandleValueChanged;
+        StartCoroutine(LoadImage(PlayerPrefs.GetString("photo_url")));
+        Debug.Log(PlayerPrefs.GetString("photo_url"));
 
-            LoadImage(photo_url);
-
-        }
-    }
-
- 
-
-    void HandleValueChanged(object sender, ValueChangedEventArgs args)
-    {
-        if (args.DatabaseError != null)
-        {
-            Debug.LogError(args.DatabaseError.Message);
-            return;
-        }
-
-        photo_url = args.Snapshot.ToString();
         
     }
+
+
+
+
+
     private IEnumerator LoadImage(string path)
     {
+        Debug.Log("Loading Image");
         var url =  path;
         var unityWebRequestTexture = UnityWebRequestTexture.GetTexture(url);
         yield return unityWebRequestTexture.SendWebRequest();
@@ -71,6 +60,8 @@ public class Profile : MonoBehaviour
 
     }
 
- 
+
+
+
 
 }

@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - DeadMosquito.IosGoodies.Example.IGOpenAppsExample
+    - DeadMosquito.IosGoodies.Internal.IosGoodiesSettings
     - FeaturesVisualizer
     - Kakera.PickerController
     - Kakera.Unimgpicker
@@ -53,7 +55,9 @@ ScriptsOnlyBuild:
     - Michsky.UI.ModernUIPack.WindowManager
     - Michsky.UI.ModernUIPack.WindowManagerButton
     - PlacenoteCameraManager
+    - Profile
     - ProfileEdit
+    - SharePanel
     - StickyNotes.MapInfoElement
     - StickyNotes.NoteController
     - StickyNotes.NotesManager
@@ -134,7 +138,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -155,227 +165,235 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 730}
+      Script: {instanceID: 806}
     - Class: 114
-      Script: {instanceID: 11852}
+      Script: {instanceID: 11928}
     - Class: 114
-      Script: {instanceID: 11854}
+      Script: {instanceID: 11930}
     - Class: 114
-      Script: {instanceID: 11856}
+      Script: {instanceID: 11932}
     - Class: 114
-      Script: {instanceID: 11858}
+      Script: {instanceID: 11934}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11936}
     - Class: 114
-      Script: {instanceID: 11862}
-    - Class: 114
-      Script: {instanceID: 11864}
-    - Class: 114
-      Script: {instanceID: 11866}
-    - Class: 114
-      Script: {instanceID: 11868}
-    - Class: 114
-      Script: {instanceID: 11870}
-    - Class: 114
-      Script: {instanceID: 11872}
-    - Class: 114
-      Script: {instanceID: 11874}
-    - Class: 114
-      Script: {instanceID: 11876}
-    - Class: 114
-      Script: {instanceID: 11878}
-    - Class: 114
-      Script: {instanceID: 11880}
-    - Class: 114
-      Script: {instanceID: 11902}
-    - Class: 114
-      Script: {instanceID: 11906}
+      Script: {instanceID: 11938}
     - Class: 114
       Script: {instanceID: 11940}
     - Class: 114
+      Script: {instanceID: 11942}
+    - Class: 114
+      Script: {instanceID: 11944}
+    - Class: 114
+      Script: {instanceID: 11946}
+    - Class: 114
+      Script: {instanceID: 11948}
+    - Class: 114
+      Script: {instanceID: 11950}
+    - Class: 114
+      Script: {instanceID: 11952}
+    - Class: 114
+      Script: {instanceID: 11954}
+    - Class: 114
       Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 11982}
+      Script: {instanceID: 11980}
     - Class: 114
-      Script: {instanceID: 12008}
+      Script: {instanceID: 11984}
     - Class: 114
-      Script: {instanceID: 12024}
+      Script: {instanceID: 12018}
     - Class: 114
-      Script: {instanceID: 12068}
+      Script: {instanceID: 12034}
     - Class: 114
-      Script: {instanceID: 12074}
+      Script: {instanceID: 12060}
     - Class: 114
-      Script: {instanceID: 12078}
+      Script: {instanceID: 12090}
     - Class: 114
-      Script: {instanceID: 12140}
+      Script: {instanceID: 12108}
     - Class: 114
-      Script: {instanceID: 12144}
+      Script: {instanceID: 12156}
     - Class: 114
-      Script: {instanceID: 12184}
+      Script: {instanceID: 12162}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12168}
     - Class: 114
-      Script: {instanceID: 12274}
+      Script: {instanceID: 12178}
     - Class: 114
-      Script: {instanceID: 12298}
+      Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12344}
+      Script: {instanceID: 12292}
     - Class: 114
-      Script: {instanceID: 12354}
+      Script: {instanceID: 12378}
     - Class: 114
-      Script: {instanceID: 12368}
+      Script: {instanceID: 12390}
     - Class: 114
-      Script: {instanceID: 12410}
+      Script: {instanceID: 12414}
     - Class: 114
-      Script: {instanceID: 12412}
+      Script: {instanceID: 12434}
     - Class: 114
-      Script: {instanceID: 12510}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12538}
+      Script: {instanceID: 12474}
     - Class: 114
-      Script: {instanceID: 12606}
+      Script: {instanceID: 12488}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 12534}
     - Class: 114
-      Script: {instanceID: 12686}
+      Script: {instanceID: 12536}
     - Class: 114
-      Script: {instanceID: 12710}
+      Script: {instanceID: 12650}
+    - Class: 114
+      Script: {instanceID: 12682}
+    - Class: 114
+      Script: {instanceID: 12734}
+    - Class: 114
+      Script: {instanceID: 12752}
+    - Class: 114
+      Script: {instanceID: 12828}
     - Class: 114
       Script: {instanceID: 12838}
     - Class: 114
-      Script: {instanceID: 12840}
+      Script: {instanceID: 12862}
     - Class: 114
-      Script: {instanceID: 12910}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 12950}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 12958}
+      Script: {instanceID: 13086}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 13128}
     - Class: 114
-      Script: {instanceID: 13036}
+      Script: {instanceID: 13136}
     - Class: 114
-      Script: {instanceID: 13072}
+      Script: {instanceID: 13214}
     - Class: 114
-      Script: {instanceID: 13126}
-    - Class: 114
-      Script: {instanceID: 13134}
-    - Class: 114
-      Script: {instanceID: 13184}
-    - Class: 114
-      Script: {instanceID: 13192}
-    - Class: 114
-      Script: {instanceID: 13262}
+      Script: {instanceID: 13222}
     - Class: 114
       Script: {instanceID: 13264}
     - Class: 114
-      Script: {instanceID: 13266}
+      Script: {instanceID: 13324}
     - Class: 114
-      Script: {instanceID: 13294}
+      Script: {instanceID: 13332}
     - Class: 114
-      Script: {instanceID: 13308}
+      Script: {instanceID: 13390}
     - Class: 114
-      Script: {instanceID: 13342}
+      Script: {instanceID: 13398}
     - Class: 114
-      Script: {instanceID: 13458}
+      Script: {instanceID: 13476}
     - Class: 114
-      Script: {instanceID: 13466}
+      Script: {instanceID: 13478}
     - Class: 114
-      Script: {instanceID: 13484}
+      Script: {instanceID: 13480}
     - Class: 114
-      Script: {instanceID: 13496}
+      Script: {instanceID: 13514}
     - Class: 114
       Script: {instanceID: 13530}
     - Class: 114
-      Script: {instanceID: 13566}
+      Script: {instanceID: 13570}
     - Class: 114
-      Script: {instanceID: 13568}
+      Script: {instanceID: 13700}
     - Class: 114
-      Script: {instanceID: 13574}
+      Script: {instanceID: 13710}
     - Class: 114
-      Script: {instanceID: 13630}
+      Script: {instanceID: 13728}
     - Class: 114
-      Script: {instanceID: 13658}
+      Script: {instanceID: 13740}
     - Class: 114
-      Script: {instanceID: 13746}
+      Script: {instanceID: 13774}
     - Class: 114
-      Script: {instanceID: 13800}
+      Script: {instanceID: 13816}
     - Class: 114
-      Script: {instanceID: 13820}
+      Script: {instanceID: 13818}
     - Class: 114
-      Script: {instanceID: 13840}
+      Script: {instanceID: 13824}
     - Class: 114
-      Script: {instanceID: 13904}
+      Script: {instanceID: 13882}
     - Class: 114
-      Script: {instanceID: 13914}
+      Script: {instanceID: 13898}
     - Class: 114
-      Script: {instanceID: 13964}
+      Script: {instanceID: 13912}
     - Class: 114
-      Script: {instanceID: 13988}
+      Script: {instanceID: 14006}
     - Class: 114
-      Script: {instanceID: 13990}
+      Script: {instanceID: 14062}
     - Class: 114
-      Script: {instanceID: 14038}
+      Script: {instanceID: 14082}
     - Class: 114
-      Script: {instanceID: 14074}
+      Script: {instanceID: 14102}
     - Class: 114
-      Script: {instanceID: 14126}
+      Script: {instanceID: 14170}
     - Class: 114
-      Script: {instanceID: 14140}
+      Script: {instanceID: 14182}
     - Class: 114
-      Script: {instanceID: 14144}
+      Script: {instanceID: 14236}
     - Class: 114
-      Script: {instanceID: 14172}
+      Script: {instanceID: 14250}
     - Class: 114
-      Script: {instanceID: 14222}
-    - Class: 114
-      Script: {instanceID: 14230}
+      Script: {instanceID: 14264}
     - Class: 114
       Script: {instanceID: 14266}
     - Class: 114
-      Script: {instanceID: 14306}
+      Script: {instanceID: 14318}
     - Class: 114
-      Script: {instanceID: 14316}
+      Script: {instanceID: 14354}
     - Class: 114
-      Script: {instanceID: 14356}
+      Script: {instanceID: 14412}
     - Class: 114
-      Script: {instanceID: 14364}
+      Script: {instanceID: 14428}
     - Class: 114
-      Script: {instanceID: 14482}
+      Script: {instanceID: 14432}
     - Class: 114
-      Script: {instanceID: 14498}
+      Script: {instanceID: 14466}
     - Class: 114
-      Script: {instanceID: 14528}
+      Script: {instanceID: 14524}
     - Class: 114
-      Script: {instanceID: 14546}
+      Script: {instanceID: 14532}
+    - Class: 114
+      Script: {instanceID: 14576}
     - Class: 114
       Script: {instanceID: 14618}
     - Class: 114
-      Script: {instanceID: 14638}
+      Script: {instanceID: 14628}
     - Class: 114
-      Script: {instanceID: 14660}
+      Script: {instanceID: 14670}
     - Class: 114
-      Script: {instanceID: 14662}
-    - Class: 114
-      Script: {instanceID: 14672}
-    - Class: 114
-      Script: {instanceID: 14692}
-    - Class: 114
-      Script: {instanceID: 14700}
-    - Class: 114
-      Script: {instanceID: 14702}
-    - Class: 114
-      Script: {instanceID: 14708}
-    - Class: 114
-      Script: {instanceID: 14726}
+      Script: {instanceID: 14678}
     - Class: 114
       Script: {instanceID: 14810}
     - Class: 114
-      Script: {instanceID: 14872}
+      Script: {instanceID: 14828}
     - Class: 114
-      Script: {instanceID: 14894}
+      Script: {instanceID: 14862}
+    - Class: 114
+      Script: {instanceID: 14882}
+    - Class: 114
+      Script: {instanceID: 14954}
+    - Class: 114
+      Script: {instanceID: 14976}
+    - Class: 114
+      Script: {instanceID: 14998}
+    - Class: 114
+      Script: {instanceID: 15000}
+    - Class: 114
+      Script: {instanceID: 15014}
+    - Class: 114
+      Script: {instanceID: 15034}
+    - Class: 114
+      Script: {instanceID: 15042}
+    - Class: 114
+      Script: {instanceID: 15044}
+    - Class: 114
+      Script: {instanceID: 15052}
+    - Class: 114
+      Script: {instanceID: 15074}
+    - Class: 114
+      Script: {instanceID: 15166}
+    - Class: 114
+      Script: {instanceID: 15230}
+    - Class: 114
+      Script: {instanceID: 15254}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -621,10 +639,22 @@ ScriptsOnlyBuild:
     className: ProgressBar
   - hash:
       serializedVersion: 2
+      Hash: 916bc96938ed1941bfa7416a4cb2657f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: EnableOnClick
+  - hash:
+      serializedVersion: 2
       Hash: d53a0f2640b8100ffb4404334930d028
     assemblyName: Assembly-CSharp.dll
     namespaceName: Michsky.UI.ModernUIPack
     className: UIManagerHSelector
+  - hash:
+      serializedVersion: 2
+      Hash: 9ff55f0be384f804f05e9469faddb18f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Internal
+    className: IosGoodiesSettings
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -655,6 +685,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FeaturesVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 1597bb066ff56feb41eea36bb0f872a5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IGInfoExample
   - hash:
       serializedVersion: 2
       Hash: 5780b7db7953b5af3ef5959f8bef670c
@@ -867,6 +903,12 @@ ScriptsOnlyBuild:
     className: TransitionArmModel
   - hash:
       serializedVersion: 2
+      Hash: e225119ded59b00beaa12f173d59b797
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IGOpenAppsExample
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -931,6 +973,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ControlPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IGMapsExample
   - hash:
       serializedVersion: 2
       Hash: dd7520b7d4e690e8c593273e7b9fbe80
@@ -1053,7 +1101,7 @@ ScriptsOnlyBuild:
     className: UIGradient
   - hash:
       serializedVersion: 2
-      Hash: b4b9e0e10b1e24c43342c588bf7d9d59
+      Hash: 2b11059223d0720b6da4c3e7c15e8b1b
     assemblyName: Assembly-CSharp.dll
     namespaceName: StickyNotes
     className: NotesManager
@@ -1233,6 +1281,12 @@ ScriptsOnlyBuild:
     className: Rotator
   - hash:
       serializedVersion: 2
+      Hash: a41baec964dee535488f3d92e535be14
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IGDialogsExample
+  - hash:
+      serializedVersion: 2
       Hash: cf3483943f73da7ac188fa08d40c10e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: HelloWorld
@@ -1245,7 +1299,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: a0b51ad90985be5ee4acd6f6d2807c90
+      Hash: 46e8dfc55e0b9e633b828b359d727230
     assemblyName: Assembly-CSharp.dll
     namespaceName: Telegram.Auth
     className: PhoneManager
@@ -1329,6 +1383,12 @@ ScriptsOnlyBuild:
     className: GraphicsLineRenderer
   - hash:
       serializedVersion: 2
+      Hash: c17568843fe2c065a2b3eb5dbc48caf4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SharePanel
+  - hash:
+      serializedVersion: 2
       Hash: a9fcdcb155d0f77b4f53b82879ced522
     assemblyName: Assembly-CSharp.dll
     namespaceName: Michsky.UI.ModernUIPack
@@ -1354,9 +1414,21 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IGCalendarExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARPointCloudParticleVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 21ce33eaf3f5f66a3c478f273246b2c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Recepients
   - hash:
       serializedVersion: 2
       Hash: be0af4b142f25976c86938456009673d
@@ -1455,7 +1527,13 @@ ScriptsOnlyBuild:
     className: AnimatedIconHandler
   - hash:
       serializedVersion: 2
-      Hash: 25e3e4c28e047dddeeb211dec1baf25a
+      Hash: 76e84c6b6c6f352c61c2cc05f3b1ac17
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IGHardwareExample
+  - hash:
+      serializedVersion: 2
+      Hash: 5cfbacae74ec02bcce624955e8956bd2
     assemblyName: Assembly-CSharp.dll
     namespaceName: Telegram.Phone
     className: PhoneController
@@ -1507,6 +1585,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Michsky.UI.ModernUIPack
     className: ButtonManagerBasicIconEditor
+  - hash:
+      serializedVersion: 2
+      Hash: ced2bc8db308abe9147a5492d15ea796
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Profile
   - hash:
       serializedVersion: 2
       Hash: e7b17e3bf5f92b3c69b3efcfca18d6a3
@@ -1617,6 +1701,12 @@ ScriptsOnlyBuild:
     className: HorizontalSelectorEditor
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IosGoodiesDemoController
+  - hash:
+      serializedVersion: 2
       Hash: ed0f4cac8dce36fa4d9bc25f9fb5d0ea
     assemblyName: Assembly-CSharp.dll
     namespaceName: Kakera
@@ -1647,7 +1737,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 5508547e4b85fdc66420d2d348bb4db2
+      Hash: b1be4534dfb6ad276f842152269c76ef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SwitchPanels
@@ -1669,6 +1759,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: Benchmark04
+  - hash:
+      serializedVersion: 2
+      Hash: 6a01cb8695a4b45b926eb9785f80146f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Shake
   - hash:
       serializedVersion: 2
       Hash: e1c35cdce946e9da77fe80a39c261608
@@ -1767,6 +1863,12 @@ ScriptsOnlyBuild:
     className: VertexZoom
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: DeadMosquito.IosGoodies.Example
+    className: IGShareExample
+  - hash:
+      serializedVersion: 2
       Hash: 893dbdbfe611d62e230a686ea89f1efd
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
@@ -1833,7 +1935,7 @@ ScriptsOnlyBuild:
     className: UIManagerModalWindow
   - hash:
       serializedVersion: 2
-      Hash: 701d99a013b8252b793df12c17949499
+      Hash: 34ee8c619f9e60acb6d0ac56d5c3f4cb
     assemblyName: Assembly-CSharp.dll
     namespaceName: StickyNotes
     className: StickyNotesMain
@@ -1929,7 +2031,7 @@ ScriptsOnlyBuild:
     className: ToggleAnim
   - hash:
       serializedVersion: 2
-      Hash: 387924a209ab8582434706ba4b6563d3
+      Hash: 13593ba993ea4fc8a554bb8823f935fc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ProfileEdit
@@ -2031,7 +2133,7 @@ ScriptsOnlyBuild:
     className: ButtonManagerBasicWithIconEditor
   - hash:
       serializedVersion: 2
-      Hash: ede84270bf14d4850e455d0733022728
+      Hash: 7c85ffc05d6c26a978128e0070ceff63
     assemblyName: Assembly-CSharp.dll
     namespaceName: StickyNotes
     className: NoteController

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Telegram.Auth;
 using UnityEngine;
 
 public class SwitchPanels : MonoBehaviour
@@ -9,6 +10,9 @@ public class SwitchPanels : MonoBehaviour
     public GameObject CrtAccountPanel;
     public GameObject InitPanel;
     public GameObject LabelPanel;
+    public GameObject LoginandRegisterPanel;
+    public GameObject RegisterPanel;
+    public GameObject LoginPanel;
 
 
 
@@ -36,22 +40,68 @@ public class SwitchPanels : MonoBehaviour
 
     public void crtAccountPanel()
     {
-        CrtAccountPanel.SetActive(true);
-        VerifyCodePanel.SetActive(false);
-        PhoneNumberPanel.SetActive(false);
-        CrtAccountPanel.SetActive(false);
         InitPanel.SetActive(false);
+        CrtAccountPanel.SetActive(true);
+        
 
     }
 
     public void initPanel()
     {
+
         InitPanel.SetActive(true);
         LabelPanel.SetActive(true);
         CrtAccountPanel.SetActive(false);
         PhoneNumberPanel.SetActive(false);
-        PhoneNumberPanel.SetActive(false);
+        LoginandRegisterPanel.SetActive(false);
+        RegisterPanel.SetActive(false);
+        LoginPanel.SetActive(false);
+    
+
+    }
+
+    public void loginandregisterPanel()
+    {
+        InitPanel.SetActive(false);
+        LoginandRegisterPanel.SetActive(true);
+
+    }
+
+    public void registerPanel()
+    {
+
+        LoginandRegisterPanel.SetActive(false);
+        RegisterPanel.SetActive(true);
+    }
+
+    public void loginPanel()
+    {
+        LoginandRegisterPanel.SetActive(false);
+        LoginPanel.SetActive(true);
+
+    }
+
+
+    public void ProfileImageButton()
+    {
+
+
+        if (PhoneManager.Instance.Auth.CurrentUser != null)
+        {
+
+            crtAccountPanel();
+
+            Debug.Log("A user is logged in");
+
+        }
+        else
+        {
+            loginandregisterPanel();
+
+        }
+
 
 
     }
+
 }

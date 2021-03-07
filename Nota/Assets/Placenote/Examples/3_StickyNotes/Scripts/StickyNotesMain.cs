@@ -71,9 +71,9 @@ namespace StickyNotes
             FeaturesVisualizer.EnablePointcloud();
             LibPlacenote.Instance.RegisterListener(this);
 
-            FirebaseCore.MapListRetrieval();
+           
 
-            OnNewMapClick();
+          //  OnNewMapClick();
 
 
             // Localization thumbnail handler.
@@ -108,15 +108,16 @@ namespace StickyNotes
             if (!mPlacenoteInit && LibPlacenote.Instance.Initialized())
             {
                 mPlacenoteInit = true;
-              mLabelText.text = "Ready to Start!";
+             // mLabelText.text = "Ready to Start!";
             }
         }
 
 
         public void OnSearchMapsClick()
         {
+            FirebaseCore.MapListRetrieval();
 
-         mLabelText.text = "Searching for saved notes";
+            mLabelText.text = "Searching for saved notes";
 
             LocationInfo locationInfo = Input.location.lastData;
 
@@ -336,6 +337,7 @@ namespace StickyNotes
 
         public void OnNewMapClick()
         {
+            mLabelText.text = "Walk up to an area and tap the middle button to place a note.";
 
             if (!LibPlacenote.Instance.Initialized())
             {
@@ -343,10 +345,10 @@ namespace StickyNotes
                 return;
             }
 
-          mLabelText.text = "Walk up to an area and tap the screen to place a note.";
+    
 
-            mInitPanel.SetActive(false);
-            mMappingPanel.SetActive(true);
+            mInitPanel.SetActive(true);
+         //   mMappingPanel.SetActive(true);
 
             saveButtonProgressBar.gameObject.GetComponent<Image>().fillAmount = 0;
             mapQualityThresholdCrossed = false;
@@ -529,7 +531,7 @@ namespace StickyNotes
 
         public void OnPose(Matrix4x4 outputPose, Matrix4x4 arkitPose)
         {
-
+            Debug.Log("OnPose");
             // we only care about the mapping mode here
             if (LibPlacenote.Instance.GetMode() != LibPlacenote.MappingMode.MAPPING)
             {

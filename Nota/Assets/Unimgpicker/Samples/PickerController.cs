@@ -61,9 +61,7 @@ namespace Kakera
             UploadProfilePicAsync();
 
         }
-
-        //    public static 
-
+        
         private void UploadProfilePicAsync()
         {
             FirebaseStorage storage = FirebaseStorage.DefaultInstance;
@@ -81,7 +79,11 @@ namespace Kakera
            {
                // Metadata contains file metadata such as size, content-type, and download URL.
                Firebase.Storage.StorageMetadata metadata = task.Result;
-               download_url = profile_images.GetDownloadUrlAsync().ToString();
+               profile_images.GetDownloadUrlAsync().ContinueWith((Task<Uri> downloadurl) =>
+               {
+                   download_url = downloadurl.Result.ToString();
+
+               });
                Debug.Log("Finished uploading...");
                Debug.Log("download url = " + download_url);
            }

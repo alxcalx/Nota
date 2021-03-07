@@ -2,14 +2,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs">
     <Files>
       <File FileName="Assets/Scripts/MapInfo.cs" Line="14" Column="7" IsPinned="True" />
-      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NotesManager.cs" Line="39" Column="18" IsPinned="True" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NotesManager.cs" IsPinned="True" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/Data/UserModel.cs" IsPinned="True" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Managers/PhoneManager.cs" />
       <File FileName="Assets/MainController_.cs" />
-      <File FileName="Assets/SwitchPanels.cs" />
-      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NoteController.cs" Line="58" Column="1" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NoteController.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/FirebaseCore.cs" />
-      <File FileName="Assets/Placenote/EditorCoroutines/Scripts/EditorCoroutines.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/PhoneController.cs" />
       <File FileName="Assets/Nota/Scripts/Profile.cs" />
       <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/MapInfoElement.cs" />
@@ -20,18 +18,33 @@
       <File FileName="Assets/Placenote/LibPlacenote/PNUtility.cs" />
       <File FileName="Assets/Placenote/LibPlacenote/FeaturesVisualizer.cs" />
       <File FileName="Assets/Placenote/Editor/APIKeyCheck.cs" />
-      <File FileName="Assets/Placenote/Editor/LibraryCheck.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/UI/Panels/Phone/PhoneNumberPanel.cs" />
-      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs" Line="69" Column="45" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs" Line="534" Column="33" />
       <File FileName="Assets/Unimgpicker/Samples/PickerController.cs" />
-      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/IntroController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/IntroController.cs" />
+      <File FileName="Assets/ProfileEdit.cs" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/UI/Panels/Phone/VerificationPanel.cs" />
+      <File FileName="Assets/Nota/Scripts/Recepients.cs" />
+      <File FileName="Assets/Modern UI Pack/Editor/ContextMenu.cs" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/UI/Panels/Phone/ProfilePanel.cs" />
+      <File FileName="Assets/Telegram 3D/Telegram/Scripts/Core/PrefsKeys.cs" />
+      <File FileName="Assets/SwitchPanels.cs" />
+      <File FileName="Assets/Unimgpicker/Samples/Rotator.cs" />
+      <File FileName="Assets/Unimgpicker/Scripts/Unimgpicker.cs" />
+      <File FileName="Assets/Modern UI Pack/Scripts/Animated Icon/AnimatedIconHandler.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Nota" expanded="True">
-            <Node name="Assets" expanded="True">
+            <Node name="Assets" expanded="True" selected="True">
               <Node name="Firebase" expanded="True" />
+              <Node name="Modern UI Pack" expanded="True">
+                <Node name="Editor" expanded="True" />
+                <Node name="Scripts" expanded="True">
+                  <Node name="Animated Icon" expanded="True" />
+                </Node>
+              </Node>
               <Node name="Nota" expanded="True">
                 <Node name="Scripts" expanded="True" />
               </Node>
@@ -42,9 +55,7 @@
                 </Node>
                 <Node name="Examples" expanded="True">
                   <Node name="3_StickyNotes" expanded="True">
-                    <Node name="Scripts" expanded="True">
-                      <Node name="StickyNotesMain.cs" selected="True" />
-                    </Node>
+                    <Node name="Scripts" expanded="True" />
                   </Node>
                 </Node>
                 <Node name="LibPlacenote" expanded="True" />
@@ -75,6 +86,7 @@
               </Node>
               <Node name="Unimgpicker" expanded="True">
                 <Node name="Samples" expanded="True" />
+                <Node name="Scripts" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -84,7 +96,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c81b6a34-29d5-4a94-9f0c-38b51124301a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8cc71e7a-91d5-453e-b7d3-edecd0b778db" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

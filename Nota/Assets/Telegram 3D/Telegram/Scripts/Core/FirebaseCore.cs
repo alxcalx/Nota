@@ -91,17 +91,19 @@ namespace Telegram.Core
                 yield break;
             }
 
-            var playerDict = (IDictionary<string, object>) player.Value;
-            var userModel = new UserModel(playerDict);
+           // var playerDict = (IDictionary<string, object>) player.Value;
+          //  var userModel = new UserModel(playerDict);
 
-            cb(false, userModel);
+          //  cb(false, userModel);
         }
 
        
 
         public static IEnumerator UpdateUserNameAsync(string userName)
         {
-            LoadingPanel.Instance.LoadingStart(ELoading.Load);
+            //     LoadingPanel.Instance.LoadingStart(ELoading.Load);
+
+            Debug.Log("Updating user name");
 
             _elapsedTime = 0;
 
@@ -111,8 +113,10 @@ namespace Telegram.Core
                 yield break;
             }
 
-            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("user_name").SetValueAsync(userName);
+            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("UserName").SetValueAsync(userName);
             yield return new WaitWhile(() => IsTask(task.IsCompleted));
+
+            PlayerPrefs.SetString("username", userName);
 
             if (task.IsFaulted || task.IsCanceled)
             {
@@ -126,7 +130,9 @@ namespace Telegram.Core
 
         public static IEnumerator UpdatePrfofilePicAsync(string photourl)
         {
-            LoadingPanel.Instance.LoadingStart(ELoading.Load);
+            //    LoadingPanel.Instance.LoadingStart(ELoading.Load);
+
+            Debug.Log("Updating Profile Pic");
 
             _elapsedTime = 0;
 
@@ -136,8 +142,10 @@ namespace Telegram.Core
                 yield break;
             }
 
-            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("photo_url").SetValueAsync(photourl);
+            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("PhotoUrl").SetValueAsync(photourl);
             yield return new WaitWhile(() => IsTask(task.IsCompleted));
+
+            PlayerPrefs.SetString("photo_url", photourl);
 
             if (task.IsFaulted || task.IsCanceled)
             {
@@ -150,7 +158,9 @@ namespace Telegram.Core
 
         public static IEnumerator UpdateProfileNameAsync(string name)
         {
-            LoadingPanel.Instance.LoadingStart(ELoading.Load);
+            //   LoadingPanel.Instance.LoadingStart(ELoading.Load);
+
+            Debug.Log("Updating full name");
 
             _elapsedTime = 0;
 
@@ -160,8 +170,10 @@ namespace Telegram.Core
                 yield break;
             }
 
-            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("full_name").SetValueAsync(name);
+            var task = BaseRef.Child("users").Child(PhoneManager.Instance.User.UserId).Child("Name").SetValueAsync(name);
             yield return new WaitWhile(() => IsTask(task.IsCompleted));
+
+            PlayerPrefs.SetString("name", name);
 
             if (task.IsFaulted || task.IsCanceled)
             {
