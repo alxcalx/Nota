@@ -55,21 +55,26 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/GO Map - 3D Map For AR Gaming/Core/NavMeshComponents/Editor/NavMeshComponentsGUIUtility.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/BiometricsAuthentication.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/PluginFeature.cs" />
+    <Compile Include="Assets/GO Map - 3D Map For AR Gaming/Core/NavMeshComponents/Editor/NavMeshModifierVolumeEditor.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/IosGoodiesGettingStartedWindow.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/CalendarAndReminders.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/IosGoodiesEditorUtils.cs" />
+    <Compile Include="Assets/GO Map - 3D Map For AR Gaming/Core/NavMeshComponents/Editor/NavMeshLinkEditor.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/RateAppDialogFeature.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/DefineUtils.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/SocialShare.cs" />
     <Compile Include="Assets/Modern UI Pack/Editor/ContextMenu.cs" />
+    <Compile Include="Assets/GO Map - 3D Map For AR Gaming/Core/NavMeshComponents/Editor/NavMeshModifierEditor.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/ContactPickerFeature.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/CleanFeatures.cs" />
     <Compile Include="Assets/Modern UI Pack/Editor/InitMUIP.cs" />
     <Compile Include="Assets/Unimgpicker/Editor/XcodeConfigurator.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Postprocessing/IGProjectPostprocessor.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/IosGoodiesSettingsEditor.cs" />
+    <Compile Include="Assets/GO Map - 3D Map For AR Gaming/Core/NavMeshComponents/Editor/NavMeshSurfaceEditor.cs" />
     <Compile Include="Assets/Placenote/Editor/APIKeyCheck.cs" />
     <Compile Include="Assets/IOSGoodies/Editor/Config/Features/ImagePicker.cs" />
     <Compile Include="Assets/Modern UI Pack/Editor/ExtendedColorPicker.cs" />
@@ -78,6 +83,18 @@
     <Compile Include="Assets/Modern UI Pack/Editor/UIManagerEditor.cs" />
     <Compile Include="Assets/Placenote/Editor/PostBuildTrigger.cs" />
     <Compile Include="Assets/Placenote/Editor/PlacenoteVersionInfo.cs" />
+    <Compile Include="Assets/ARLocation/Editor/ARLocationManagerInspector.cs" />
+    <Compile Include="Assets/ARLocation/Editor/LocationPathInspector.cs" />
+    <Compile Include="Assets/ARLocation/Editor/DefineSymbols.cs" />
+    <Compile Include="Assets/ARLocation/Editor/GameObjectMenuItems.cs" />
+    <Compile Include="Assets/ARLocation/Editor/LocationPropertyDataDrawer.cs" />
+    <Compile Include="Assets/ARLocation/Editor/ARLocationConfigInspector.cs" />
+    <Compile Include="Assets/ARLocation/Editor/ARLocationProviderInspector.cs" />
+    <Compile Include="Assets/ARLocation/Editor/ConditionalPropertyDrawer.cs" />
+    <Compile Include="Assets/ARLocation/Editor/DefineSymbolsManager.cs" />
+    <Compile Include="Assets/ARLocation/Editor/ARLocationEditorConfigManager.cs" />
+    <Compile Include="Assets/ARLocation/Editor/OverrideAltitudeDataDrawer.cs" />
+    <Compile Include="Assets/ARLocation/Editor/ARLocationOrientationInspector.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/Unimgpicker/Editor/NSPhotoLibraryUsageDescription.txt" />
@@ -774,6 +791,12 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="HeathenEngineering.Arkane.Foundation">
+      <HintPath>Library/ScriptAssemblies/HeathenEngineering.Arkane.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="HeathenEngineering.BGSDK.Foundation.Editor">
+      <HintPath>Library/ScriptAssemblies/HeathenEngineering.BGSDK.Foundation.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

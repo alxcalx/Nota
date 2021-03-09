@@ -1,0 +1,16 @@
+{
+    "name": "HeathenEngineering.BGSDK.Foundation.Editor",
+    "references": [
+        "HeathenEngineering.BGSDK.Foundation"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

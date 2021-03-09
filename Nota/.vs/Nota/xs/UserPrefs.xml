@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{F78D4972-5AA2-F831-C831-D20F05A9E354}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.heathenengineering.arkanefoundation@26aa4de7f6/API/TokenManagement.cs">
     <Files>
       <File FileName="Assets/Scripts/MapInfo.cs" Line="14" Column="7" IsPinned="True" />
       <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/NotesManager.cs" IsPinned="True" />
@@ -19,7 +19,7 @@
       <File FileName="Assets/Placenote/LibPlacenote/FeaturesVisualizer.cs" />
       <File FileName="Assets/Placenote/Editor/APIKeyCheck.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/UI/Panels/Phone/PhoneNumberPanel.cs" />
-      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs" Line="534" Column="33" />
+      <File FileName="Assets/Placenote/Examples/3_StickyNotes/Scripts/StickyNotesMain.cs" />
       <File FileName="Assets/Unimgpicker/Samples/PickerController.cs" />
       <File FileName="Assets/Telegram 3D/Telegram/Scripts/Controllers/IntroController.cs" />
       <File FileName="Assets/ProfileEdit.cs" />
@@ -32,6 +32,9 @@
       <File FileName="Assets/Unimgpicker/Samples/Rotator.cs" />
       <File FileName="Assets/Unimgpicker/Scripts/Unimgpicker.cs" />
       <File FileName="Assets/Modern UI Pack/Scripts/Animated Icon/AnimatedIconHandler.cs" />
+      <File FileName="Assets/GO Map - 3D Map For AR Gaming/Core/Map Builders/GOMapObjects/GOMap.cs" />
+      <File FileName="Library/PackageCache/com.heathenengineering.arkanefoundation@26aa4de7f6/API/Wallets.cs" Line="8" Column="1" />
+      <File FileName="Library/PackageCache/com.heathenengineering.arkanefoundation@26aa4de7f6/API/TokenManagement.cs" Line="7" Column="33" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -39,6 +42,13 @@
           <Node name="Nota" expanded="True">
             <Node name="Assets" expanded="True" selected="True">
               <Node name="Firebase" expanded="True" />
+              <Node name="GO Map - 3D Map For AR Gaming" expanded="True">
+                <Node name="Core" expanded="True">
+                  <Node name="Map Builders" expanded="True">
+                    <Node name="GOMapObjects" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Modern UI Pack" expanded="True">
                 <Node name="Editor" expanded="True" />
                 <Node name="Scripts" expanded="True">
@@ -96,7 +106,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8cc71e7a-91d5-453e-b7d3-edecd0b778db" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="04f5144d-437b-430e-ac12-62fc223bd39b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
