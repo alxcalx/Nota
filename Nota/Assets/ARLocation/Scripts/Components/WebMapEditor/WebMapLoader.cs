@@ -1,3 +1,4 @@
+using GoMap;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -8,7 +9,7 @@ namespace ARLocation {
     public class WebMapLoader : MonoBehaviour
     {
 
-        public class DataEntry
+    /*    public class DataEntry
         {
             public int id;
             public double lat;
@@ -34,9 +35,9 @@ namespace ARLocation {
                     return AltitudeMode.Ignore;
                 }
             }
-        }
+        }    */
 
-        /// <summary>
+       /// <summary>
         ///   The `PrefabDatabase` ScriptableObject, containing a dictionary of Prefabs with a string ID.
         /// </summary>
         public PrefabDatabase PrefabDatabase;
@@ -44,27 +45,28 @@ namespace ARLocation {
         /// <summary>
         ///   The XML data file download from the Web Map Editor (htttps://editor.unity-ar-gps-location.com)
         /// </summary>
-        public TextAsset XmlDataFile;
+      //  public TextAsset XmlDataFile;
 
         /// <summary>
         ///   If true, enable DebugMode on the `PlaceAtLocation` generated instances.
         /// </summary>
         public bool DebugMode;
 
-        private List<DataEntry> _dataEntries = new List<DataEntry>();
+      //  private List<DataEntry> _dataEntries = new List<DataEntry>();
         private List<GameObject> _stages = new List<GameObject>();
         private List<PlaceAtLocation> _placeAtComponents = new List<PlaceAtLocation>();
 
         // Start is called before the first frame update
         void Start()
         {
-            LoadXmlFile();
+         // LoadXmlFile();
+
             BuildGameObjects();
         }
 
         void BuildGameObjects()
         {
-            foreach (var entry in _dataEntries)
+            foreach (var entry in GOMap.info)
             {
                 var Prefab = PrefabDatabase.GetEntryById(entry.meshId);
 
@@ -86,7 +88,7 @@ namespace ARLocation {
                     {
                         Latitude = entry.lat,
                         Longitude = entry.lng,
-                        Altitude = entry.altitude,
+                        Altitude = entry.alt,
                         AltitudeMode = entry.getAltitudeMode(),
                         Label = entry.name
                     };
@@ -100,8 +102,10 @@ namespace ARLocation {
             }
         }
 
+       
+
         // Update is called once per frame
-        void LoadXmlFile()
+   /*     void LoadXmlFile()
         {
             var xmlString = XmlDataFile.text;
 
@@ -151,6 +155,9 @@ namespace ARLocation {
 
                 Debug.Log($"{id}, {lat}, {lng}, {altitude}, {altitudeMode}, {name}, {meshId}, {movementSmoothing}, {maxNumberOfLocationUpdates}, {useMovingAverage}, {hideObjectUtilItIsPlaced}");
             }
+
+    
         }
+        */
     }
 }

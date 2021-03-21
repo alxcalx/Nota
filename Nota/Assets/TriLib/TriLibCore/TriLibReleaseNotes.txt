@@ -1,0 +1,5 @@
+﻿2.0.16
+Changelog:
+-Added missing GLTF2 Mesh Primitive Modes: Triangle Fan and Triangle Strip.
+-Allowed GLTF2 skinned meshes without bindposes to load.
+-Refactored PLY ASCII parser.

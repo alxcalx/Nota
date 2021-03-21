@@ -9,6 +9,8 @@ using GoShared;
 using LocationManagerEnums;
 using UnityEngine.Networking;
 using Firebase.Database;
+using Nota.Data;
+using ARLocation;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -21,6 +23,44 @@ namespace GoMap
 	[ExecuteInEditMode]
 	public class GOMap : MonoBehaviour 
 	{
+
+        public class Info
+        {
+            public string name;
+            public string meshId;
+            public double lat;
+            public double lng;
+            public double alt;
+            public string altitudeMode;
+            public float movementSmoothing;
+            public int maxNumberOfLocationUpdates;
+            public bool useMovingAverage;
+            public bool hideObjectUtilItIsPlaced;
+            public string timecreated;
+            public string referencepointphotourl;
+
+            public AltitudeMode getAltitudeMode()
+            {
+                if (altitudeMode == "GroundRelative")
+                {
+                    return AltitudeMode.GroundRelative;
+                }
+                else if (altitudeMode == "DeviceRelative")
+                {
+                    return AltitudeMode.DeviceRelative;
+                }
+                else if (altitudeMode == "Absolute")
+                {
+                    return AltitudeMode.Absolute;
+                }
+                else
+                {
+                    return AltitudeMode.Ignore;
+                }
+            }
+
+
+        }
 
         public BaseLocationManager locationManager;
 		[Range (0,8)]  public int tileBuffer = 2;
@@ -73,7 +113,10 @@ namespace GoMap
 		//features ID
 		[HideInInspector]public IList buildingsIds;
 		[HideInInspector]public  List <GOCenterContainer> containers;
+        public static List<Info> info = new List<Info>();
         private IEnumerator destroyTilesRoutine;
+
+        
 
 		void Start () 
 	    {
@@ -85,6 +128,38 @@ namespace GoMap
 				 foreach (DataSnapshot location in e2.Snapshot.Children)
 				 {
 					 Coordinates coordinates = new Coordinates(location.Child("location").Value.ToString());
+                     string name = location.Child("setname").Value.ToString();
+                     string meshId = location.Child("meshid").Value.ToString();
+                     string altitudeMode = location.Child("altitudeMode").Value.ToString();
+                     float movementSmoothing = float.Parse(location.Child("movementSmoothing").Value.ToString());
+                     int maxNumberOfLocationUpdates = int.Parse(location.Child("maxNumberOfLocationUpdates").Value.ToString());
+                     bool useMovingAverage = bool.Parse(location.Child("useMovingAverage").Value.ToString());
+                     bool hideObjectUtilItIsPlaced = bool.Parse(location.Child("hideObjectUtilItIsPlaced").Value.ToString());
+                     string timecreated = location.Child("timecreated").Value.ToString();
+                     string referencephotourl = location.Child("referencephotourl").Value.ToString();
+
+
+                     Info mapinfo_ = new Info()
+                     {
+                         name = name,
+                         meshId = meshId,
+                         lat = coordinates.latitude,
+                         lng = coordinates.longitude,
+                         alt = coordinates.altitude,
+                         altitudeMode = "",
+                         movementSmoothing = movementSmoothing,
+                         maxNumberOfLocationUpdates = maxNumberOfLocationUpdates,
+                         useMovingAverage = useMovingAverage,
+                         hideObjectUtilItIsPlaced = hideObjectUtilItIsPlaced,
+                         timecreated = timecreated,
+                         referencepointphotourl = referencephotourl
+
+
+
+                     };
+
+
+                     info.Add(mapinfo_);
 					 dropPin(coordinates, pin);
 				 }
 
@@ -343,9 +418,9 @@ namespace GoMap
 
 		#region Utils
 
-		public void dropPin(double lat, double lng, GameObject go) {
+		public void dropPin(double lat, double lng, double alt, GameObject go) {
 
-			Coordinates coordinates = new Coordinates (lat, lng,0);
+			Coordinates coordinates = new Coordinates (lat, lng, alt);
 			go.transform.localPosition = coordinates.convertCoordinateToVector(go.transform.position.y);
 
 		}

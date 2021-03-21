@@ -6,13 +6,13 @@ namespace Nota.Data
     public class MapInfo
     {
      //   public string Author;
-        public readonly string SetName;
-        public readonly string Latitude;
-        public readonly string Longtitude;
-        public readonly string Altitude;
-        public readonly string Timecreated;
+        public string SetName;
+        public string Latitude;
+        public string Longtitude;
+        public string Altitude;
+        public string Timecreated;
      //   public readonly string PlaceId;
-        public readonly string RefencePointPhotoUrl;
+        public string RefencePointPhotoUrl;
 
         public MapInfo(/*string author,*/ string setname , string latitude, string longtitude, string altitude, string timecreated, /*string placeId,*/ string referencephotourl)
         {
@@ -30,7 +30,7 @@ namespace Nota.Data
         public MapInfo(IDictionary<string, object> dict)
         {
        //     this.Author = dict["author"].ToString();
-            this.SetName = dict["set_name"].ToString();
+            this.SetName = dict["name"].ToString();
             this.Latitude = dict["latitude"].ToString();
             this.Longtitude = dict["longtitude"].ToString();
             this.Altitude = dict["altitude"].ToString();

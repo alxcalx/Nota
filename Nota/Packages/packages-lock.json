@@ -34,13 +34,6 @@
       },
       "url": "https://unityregistry-pa.googleapis.com"
     },
-    "com.heathenengineering.arkanefoundation": {
-      "version": "https://github.com/heathen-engineering/Arkane-Foundation.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "26aa4de7f68a2810871dfe0b33b5f2bf9fadc425"
-    },
     "com.unity.device-simulator": {
       "version": "2.2.4-preview",
       "depth": 0,

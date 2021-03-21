@@ -23,7 +23,7 @@ public class GOObject : MonoBehaviour {
 	void LoadData (Coordinates currentLocation) {//This is called when the origin is set
 
 		Debug.Log ("Dropping game object at: "+coordinatesGPS.toLatLongString());
-		map.dropPin (coordinatesGPS.latitude, coordinatesGPS.longitude, gameObject);
+		map.dropPin (coordinatesGPS.latitude, coordinatesGPS.longitude, 0, gameObject);
 
 
 	}
